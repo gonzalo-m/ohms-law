@@ -29,10 +29,15 @@
     <string name="mega">M</string>
     <string name="giga">G</string>
     
+    <!-- Menu -->
+    <string name="menu_preferences">Preferences</string>
+    <string name="menu_help">Help</string>
+    <string name="menu_autorange">Autorange</string>
+    
     <!-- Preferences -->
-    <string name="preferences_label">Preferences</string>
+    <string name="preferences_title">Settings</string>
     <string name="prefs_dec_precision">Set the number of decimals places for output values</string>
-    <string name="prefs_autorange">Convert SI prefixes automatically</string>
+    <string name="prefs_autorange">Convert to SI prefixes automatically</string>
     <string name="prefs_siButtons">"Enable SI prefix buttons"</string>
     <string name="prefs_send_feedback">Email feedback or questions regarding this app to gmartz21@gmail.com</string>
     <string name="prefs_rate_app">Support free app development by leaving us a positive review</string>

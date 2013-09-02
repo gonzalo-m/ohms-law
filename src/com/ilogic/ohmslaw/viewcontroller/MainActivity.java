@@ -21,6 +21,7 @@ import android.text.TextWatcher;
 import android.util.Log;
 import android.view.ContextThemeWrapper;
 import android.view.KeyEvent;
+import android.view.Menu;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -86,7 +87,7 @@ public class MainActivity extends Activity implements Observer, OnClickListener,
 		defaultColor = inputFields[0].getTextColors();
 		setPrefixBtnsHeight();
 		
-		//New Features Dialog
+		// New features dialog
         settings = getSharedPreferences("prefs", MODE_PRIVATE);
 		boolean dialogDidNotRunOnce = settings.getBoolean("featuresDialogRan", true);
 		
@@ -109,7 +110,7 @@ public class MainActivity extends Activity implements Observer, OnClickListener,
 
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
-				
+				// do nothing
 			}
 		});
 		AlertDialog dialog = customDialog.create();
@@ -153,31 +154,26 @@ public class MainActivity extends Activity implements Observer, OnClickListener,
 			case R.id.micro_prefix_button: 
 				setPrefix(currentField, '\u03BC');
 				mOhmsLaw.setPrefix(currentField.getId(), Prefix.MICRO);
-				// triggers afterTextChanged method to update calculations
 				currentField.setText(currentField.getText()); 
 				break;
 			case R.id.milli_prefix_button: 
 				setPrefix(currentField, 'm');
 				mOhmsLaw.setPrefix(currentField.getId(), Prefix.MILLI);
-				// triggers afterTextChanged method to update calculations
 				currentField.setText(currentField.getText()); 
 				break;
 			case R.id.kilo_prefix_button: 
 				setPrefix(currentField, 'k');
 				mOhmsLaw.setPrefix(currentField.getId(), Prefix.KILO);
-				// triggers afterTextChanged method to update calculations
 				currentField.setText(currentField.getText()); 
 				break;
 			case R.id.mega_prefix_button: 
 				setPrefix(currentField, 'M');
 				mOhmsLaw.setPrefix(currentField.getId(), Prefix.MEGA);
-				// triggers afterTextChanged method to update calculations
 			    currentField.setText(currentField.getText()); 
 				break;
 			case R.id.giga_prefix_button: 
 				setPrefix(currentField, 'G');
 				mOhmsLaw.setPrefix(currentField.getId(), Prefix.GIGA);
-				// triggers afterTextChanged method to update calculations
 				currentField.setText(currentField.getText()); 
 				break;
 		}
@@ -300,23 +296,19 @@ public class MainActivity extends Activity implements Observer, OnClickListener,
 	public void update(Observable arg0, Object arg1) {
 		if (!inputFields[0].isEnabled()) {
 			inputFields[0].setText(mOhmsLaw.getVoltage().toCurrentDecimals());
-			//labels[0].setText(mOhmsLaw.getVoltage().getPrefix().getSymbol() + getResources().getString(R.string.volts));
 			setPrefix(inputFields[0], mOhmsLaw.getVoltage().getPrefix().getSymbol());
 		}
 		if (!inputFields[1].isEnabled()) {
 			inputFields[1].setText(mOhmsLaw.getCurrent().toCurrentDecimals());
-			//labels[1].setText(mOhmsLaw.getCurrent().getPrefix().getSymbol() + getResources().getString(R.string.amps));
 			setPrefix(inputFields[1], mOhmsLaw.getCurrent().getPrefix().getSymbol());
 		}
 		if (!inputFields[2].isEnabled()) {
 			inputFields[2].setText(mOhmsLaw.getResistance().toCurrentDecimals());
-			//labels[2].setText(mOhmsLaw.getResistance().getPrefix().getSymbol() + getResources().getString(R.string.ohms));
 			setPrefix(inputFields[2], mOhmsLaw.getResistance().getPrefix().getSymbol());
 			
 		}
 		if (!inputFields[3].isEnabled()) {
 			inputFields[3].setText(mOhmsLaw.getPower().toCurrentDecimals());
-			//labels[3].setText(mOhmsLaw.getPower().getPrefix().getSymbol() + getResources().getString(R.string.watts));
 			setPrefix(inputFields[3], mOhmsLaw.getPower().getPrefix().getSymbol());
 		}
 		System.out.println("updtate method called");
@@ -342,12 +334,12 @@ public class MainActivity extends Activity implements Observer, OnClickListener,
 		return false;
 	}
 	
-//	@Override
-//	public boolean onCreateOptionsMenu(Menu menu) {
-//		// Inflate the menu; this adds items to the action bar if it is present.
-//		getMenuInflater().inflate(R.menu.activity_main, menu);
-//		return true;
-//	}
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.menu_preferences, menu);
+		return true;
+	}
 	
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) 
@@ -357,7 +349,7 @@ public class MainActivity extends Activity implements Observer, OnClickListener,
 	        event.startTracking();
 	        if (!event.isLongPress())
 	        {
-	        	//Launch Menu
+	        	//Launch Preferences
 	        	Intent prefIntent = new Intent(MainActivity.this, Preferences.class);
 	    		startActivity(prefIntent);
 	        }
@@ -476,25 +468,6 @@ public class MainActivity extends Activity implements Observer, OnClickListener,
 	}
 	
 	private void regDeleteBtnListeners() {
-//		deleteBtn.setOnKeyListener(new OnKeyListener() {
-//			
-//			@Override
-//			public boolean onKey(View v, int keyCode, KeyEvent event) {
-//				if (event.getAction() != KeyEvent.ACTION_DOWN)
-//					return true;
-//				switch (keyCode) {
-//					case KeyEvent.KEYCODE_DEL:
-//						String value = ((EditText) v).getText().toString();
-//						if (!value.equals("")) {
-//							Log.d("OHMS LAW", "KEYBOARD onKey/Delete");
-//		                	((EditText) v).setText(value.substring(0, value.length() - 1));
-//		                	((EditText) v).setSelection(((EditText) v).getText().length());
-//						}
-//						break;
-//				}
-//				return false;
-//			}
-//		});
 		deleteBtn.setOnTouchListener(new OnTouchListener() {
 
 			@Override
@@ -557,7 +530,6 @@ public class MainActivity extends Activity implements Observer, OnClickListener,
 			for (int i=0; i<inputFields.length; i++) {
 				if (!inputFields[i].isEnabled()) {
 					// reset and enable it
-					
 					enable(inputFields[i]);
 					inputFields[i].setText("");
 					mOhmsLaw.setQuantity(inputFields[i].getId(), 0);
@@ -751,40 +723,33 @@ public class MainActivity extends Activity implements Observer, OnClickListener,
 			siPrefixBtns[5].setVisibility(View.GONE);
 	}
 	
-	public static final String OHMS_OBJECT = "myOhmsLawObject";
+	public static final String OHMS_OBJECT_UNIT = "myOhmsLawObject";
 	public static final String OHMS_LAW_FIELDS_IDCOMB = "ohmsLawIdComb";
 	public static final String FOCUSED_VIEW = "currentFocusedView";
+	
 	@Override
 	protected void onSaveInstanceState(Bundle saveInstanceState) {
 		//super.onSaveInstanceState(saveInstanceState);
-		String TAG = "OHM'S LAW";
-		Log.d(TAG, "==========onSave==============");
-		
 		int idComb = 1;
 		if(inputFields[0].isEnabled() && mOhmsLaw.getVoltage().getQuantity() > 0) {
-			Log.d(TAG, "voltsSaved");
 			idComb = idComb * Type.VOLT.getId();
-			saveInstanceState.putSerializable(OHMS_OBJECT + "V", mOhmsLaw.getVoltage());
+			saveInstanceState.putSerializable(OHMS_OBJECT_UNIT + "V", mOhmsLaw.getVoltage());
 		}
 		
 		if(inputFields[1].isEnabled() && mOhmsLaw.getCurrent().getQuantity() > 0) {
-			Log.d(TAG, "ampsSaved");
 			idComb = idComb * Type.AMP.getId();
-			saveInstanceState.putSerializable(OHMS_OBJECT + "I", mOhmsLaw.getCurrent());
+			saveInstanceState.putSerializable(OHMS_OBJECT_UNIT + "I", mOhmsLaw.getCurrent());
 		}
 		
 		if(inputFields[2].isEnabled() && mOhmsLaw.getResistance().getQuantity() > 0) {
-			Log.d(TAG, "ohmsSaved");
 			idComb = idComb * Type.OHM.getId();
-			saveInstanceState.putSerializable(OHMS_OBJECT + "R", mOhmsLaw.getResistance());
+			saveInstanceState.putSerializable(OHMS_OBJECT_UNIT + "R", mOhmsLaw.getResistance());
 		}
 		
 		if(inputFields[3].isEnabled() && mOhmsLaw.getPower().getQuantity() > 0) {
-			Log.d(TAG, "wattsSaved");
 			idComb = idComb * Type.WATT.getId();
-			saveInstanceState.putSerializable(OHMS_OBJECT + "P", mOhmsLaw.getPower());
+			saveInstanceState.putSerializable(OHMS_OBJECT_UNIT + "P", mOhmsLaw.getPower());
 		}
-		Log.d(TAG, mOhmsLaw.toString());
 		saveInstanceState.putInt(OHMS_LAW_FIELDS_IDCOMB, idComb);
 		saveInstanceState.putInt(FOCUSED_VIEW, getCurrentFocus().getId());
 	}
@@ -792,18 +757,13 @@ public class MainActivity extends Activity implements Observer, OnClickListener,
 	@Override
 	protected void onRestoreInstanceState(Bundle savedInstanceState) {
 		//super.onRestoreInstanceState(savedInstanceState);
-		String TAG = "OHM'S LAW";
-		Log.d(TAG, "...............onRestore.................");
-		
+		Unit savedVoltage = (Unit) savedInstanceState.getSerializable(OHMS_OBJECT_UNIT + "V");
+		Unit savedCurrent = (Unit) savedInstanceState.getSerializable(OHMS_OBJECT_UNIT + "I");
+		Unit savedResistance = (Unit) savedInstanceState.getSerializable(OHMS_OBJECT_UNIT + "R");
+		Unit savedPower = (Unit) savedInstanceState.getSerializable(OHMS_OBJECT_UNIT + "P");
 		int idCombination = savedInstanceState.getInt(OHMS_LAW_FIELDS_IDCOMB);
 		
-		Unit savedVoltage = (Unit) savedInstanceState.getSerializable(OHMS_OBJECT + "V");
-		Unit savedCurrent = (Unit) savedInstanceState.getSerializable(OHMS_OBJECT + "I");
-		Unit savedResistance = (Unit) savedInstanceState.getSerializable(OHMS_OBJECT + "R");
-		Unit savedPower = (Unit) savedInstanceState.getSerializable(OHMS_OBJECT + "P");
-		
 		switch (idCombination) {
-			
 			case 2:
 				inputFields[0].requestFocus();
 				setPrefix(inputFields[0], savedVoltage.getPrefix().getSymbol());
@@ -823,7 +783,6 @@ public class MainActivity extends Activity implements Observer, OnClickListener,
 				mOhmsLaw.setResistance(savedResistance);
 				break;
 			case 6:
-				Log.d(TAG, "SWITCH 6");
 				inputFields[0].requestFocus();
 				setPrefix(inputFields[0], savedVoltage.getPrefix().getSymbol());
 				inputFields[0].setText(savedVoltage.toCurrentDecimals());
@@ -916,7 +875,6 @@ public class MainActivity extends Activity implements Observer, OnClickListener,
 			inputFields[3].setSelection(inputFields[3].getText().length());
 			break;
 		}
-		Log.d(TAG, mOhmsLaw.toString());
 	}
 	
 	//==================== Unused methods ========================
