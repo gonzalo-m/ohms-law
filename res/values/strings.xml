@@ -60,14 +60,15 @@
         \t• Improved user interface\n
         \t• New SI prefix buttons\n
         \t• Relocated reset button</string>
-    <string name="change_log">1.01\n
-        • Custom numeric pad\n\n
+    <string name="change_log">
         2.0\n
         • Settings to adjust decimal precision\n
         • Autorange\n
-        • Improved user interface\n
         • New SI prefix buttons\n
-        • Relocated reset button</string>
+        • Improved user interface\n
+        • Relocated reset button\n\n
+        1.01\n
+        • Custom numeric pad</string>
     
     <string name="app_description">This Ohm\'s Law app allows you to calculate any 2 unknown values
      by entering 2 known values.

@@ -21,7 +21,6 @@ import android.text.TextWatcher;
 import android.util.Log;
 import android.view.ContextThemeWrapper;
 import android.view.KeyEvent;
-import android.view.Menu;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -104,7 +103,7 @@ public class MainActivity extends Activity implements Observer, OnClickListener,
 	private void showFeaturesDialog() {
 		AlertDialog.Builder customDialog = new AlertDialog.Builder(
 				new ContextThemeWrapper(this,android.R.style.Theme_Dialog));
-		customDialog.setTitle("Change Log");
+		customDialog.setTitle("What is new in this version?");
 		customDialog.setMessage(getString(R.string.change_log));
 		customDialog.setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
 
@@ -126,9 +125,7 @@ public class MainActivity extends Activity implements Observer, OnClickListener,
 	public void onClick(View v) {
 		switch (v.getId()) {
 			/* Buttons */
-			case R.id.reset_button:
-				resetAll();
-				break;
+			case R.id.reset_button: resetAll(); break;
 			case R.id.decimal_point_button:
 				if(!currentField.getText().toString().contains("."))
 					currentField.append(".");
@@ -322,23 +319,14 @@ public class MainActivity extends Activity implements Observer, OnClickListener,
 			case KeyEvent.KEYCODE_DEL:
 				String value = ((EditText) v).getText().toString();
 				if (!value.equals("")) {
-					Log.d("OHMS LAW", "KEYBOARD onKey/Delete");
                 	((EditText) v).setText(value.substring(0, value.length() - 1));
                 	((EditText) v).setSelection(((EditText) v).getText().length());
 				}
 				break;
 			case KeyEvent.KEYCODE_BACK:
-	            Log.d("OHMS LAW", "KEYBOARD onKey/Back");
 	            	finish(); //Terminate app
 		}
 		return false;
-	}
-	
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.menu_preferences, menu);
-		return true;
 	}
 	
 	@Override
@@ -474,14 +462,12 @@ public class MainActivity extends Activity implements Observer, OnClickListener,
 			public boolean onTouch(View v, MotionEvent event) {
 				switch (event.getAction()) {
 					case MotionEvent.ACTION_DOWN:
-						Log.i("OHMS LAW", "MotionEvent.ACTION_DOWN");
 						currentField.dispatchKeyEvent(
 								new KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_DEL));
 						mHandler.removeCallbacks(mUpdateTask);
 			            mHandler.postAtTime(mUpdateTask,SystemClock.uptimeMillis() + 500);
 						break;
 					case MotionEvent.ACTION_UP:
-						Log.i("OHMS LAW", "MotionEvent.ACTION_UP");
 						mHandler.removeCallbacks(mUpdateTask); 
 						break;
 				}
@@ -491,9 +477,7 @@ public class MainActivity extends Activity implements Observer, OnClickListener,
 			private Handler mHandler = new Handler();
 			private Runnable mUpdateTask = new Runnable() {
 		        @Override
-				public void run()
-		        {
-		            Log.i("OHMS LAW", "Running thread to Delete");
+				public void run() {
 		            currentField.dispatchKeyEvent(new KeyEvent(KeyEvent.ACTION_DOWN, 
 		            		KeyEvent.KEYCODE_DEL));
 		            mHandler.postAtTime(this, SystemClock.uptimeMillis() + 50);
@@ -723,9 +707,9 @@ public class MainActivity extends Activity implements Observer, OnClickListener,
 			siPrefixBtns[5].setVisibility(View.GONE);
 	}
 	
-	public static final String OHMS_OBJECT_UNIT = "myOhmsLawObject";
-	public static final String OHMS_LAW_FIELDS_IDCOMB = "ohmsLawIdComb";
-	public static final String FOCUSED_VIEW = "currentFocusedView";
+	public static final String SAVED_UNIT = "myOhmsLawObject";
+	public static final String SAVED_FIELDS_IDCOMB = "ohmsLawIdComb";
+	public static final String SAVED_FOCUSED_VIEW = "currentFocusedView";
 	
 	@Override
 	protected void onSaveInstanceState(Bundle saveInstanceState) {
@@ -733,35 +717,35 @@ public class MainActivity extends Activity implements Observer, OnClickListener,
 		int idComb = 1;
 		if(inputFields[0].isEnabled() && mOhmsLaw.getVoltage().getQuantity() > 0) {
 			idComb = idComb * Type.VOLT.getId();
-			saveInstanceState.putSerializable(OHMS_OBJECT_UNIT + "V", mOhmsLaw.getVoltage());
+			saveInstanceState.putSerializable(SAVED_UNIT + "V", mOhmsLaw.getVoltage());
 		}
 		
 		if(inputFields[1].isEnabled() && mOhmsLaw.getCurrent().getQuantity() > 0) {
 			idComb = idComb * Type.AMP.getId();
-			saveInstanceState.putSerializable(OHMS_OBJECT_UNIT + "I", mOhmsLaw.getCurrent());
+			saveInstanceState.putSerializable(SAVED_UNIT + "I", mOhmsLaw.getCurrent());
 		}
 		
 		if(inputFields[2].isEnabled() && mOhmsLaw.getResistance().getQuantity() > 0) {
 			idComb = idComb * Type.OHM.getId();
-			saveInstanceState.putSerializable(OHMS_OBJECT_UNIT + "R", mOhmsLaw.getResistance());
+			saveInstanceState.putSerializable(SAVED_UNIT + "R", mOhmsLaw.getResistance());
 		}
 		
 		if(inputFields[3].isEnabled() && mOhmsLaw.getPower().getQuantity() > 0) {
 			idComb = idComb * Type.WATT.getId();
-			saveInstanceState.putSerializable(OHMS_OBJECT_UNIT + "P", mOhmsLaw.getPower());
+			saveInstanceState.putSerializable(SAVED_UNIT + "P", mOhmsLaw.getPower());
 		}
-		saveInstanceState.putInt(OHMS_LAW_FIELDS_IDCOMB, idComb);
-		saveInstanceState.putInt(FOCUSED_VIEW, getCurrentFocus().getId());
+		saveInstanceState.putInt(SAVED_FIELDS_IDCOMB, idComb);
+		saveInstanceState.putInt(SAVED_FOCUSED_VIEW, getCurrentFocus().getId());
 	}
 	
 	@Override
 	protected void onRestoreInstanceState(Bundle savedInstanceState) {
 		//super.onRestoreInstanceState(savedInstanceState);
-		Unit savedVoltage = (Unit) savedInstanceState.getSerializable(OHMS_OBJECT_UNIT + "V");
-		Unit savedCurrent = (Unit) savedInstanceState.getSerializable(OHMS_OBJECT_UNIT + "I");
-		Unit savedResistance = (Unit) savedInstanceState.getSerializable(OHMS_OBJECT_UNIT + "R");
-		Unit savedPower = (Unit) savedInstanceState.getSerializable(OHMS_OBJECT_UNIT + "P");
-		int idCombination = savedInstanceState.getInt(OHMS_LAW_FIELDS_IDCOMB);
+		Unit savedVoltage = (Unit) savedInstanceState.getSerializable(SAVED_UNIT + "V");
+		Unit savedCurrent = (Unit) savedInstanceState.getSerializable(SAVED_UNIT + "I");
+		Unit savedResistance = (Unit) savedInstanceState.getSerializable(SAVED_UNIT + "R");
+		Unit savedPower = (Unit) savedInstanceState.getSerializable(SAVED_UNIT + "P");
+		int idCombination = savedInstanceState.getInt(SAVED_FIELDS_IDCOMB);
 		
 		switch (idCombination) {
 			case 2:
@@ -856,7 +840,7 @@ public class MainActivity extends Activity implements Observer, OnClickListener,
 				break;
 		}
 		
-		switch (savedInstanceState.getInt(FOCUSED_VIEW)) {
+		switch (savedInstanceState.getInt(SAVED_FOCUSED_VIEW)) {
 		case R.id.volts_edittext:
 			inputFields[0].requestFocus();
 			inputFields[0].setSelection(inputFields[0].getText().length());
