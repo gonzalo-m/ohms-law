@@ -135,7 +135,8 @@ public class MyCheckBoxListPreference extends ListPreference {
     	if ( vals != null ) {
     		List<String> valuesList = Arrays.asList(vals);
 //        	for ( int j=0; j<vals.length; j++ ) {
-//    		TODO: Check why the trimming... Can there be some random spaces added somehow? What if we want a value with trailing spaces, is that an issue?
+//    		TODO: Check why the trimming... Can there be some random spaces added somehow?
+//          What if we want a value with trailing spaces, is that an issue?
 //        		String val = vals[j].trim();
         	for ( int i=0; i<entryValues.length; i++ ) {
         		CharSequence entry = entryValues[i];

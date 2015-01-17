@@ -4,11 +4,9 @@ import java.io.Serializable;
 import java.text.DecimalFormat;
 
 public class Unit implements Serializable {
-	
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 1L;
+
 	protected double quantity;
 	protected Prefix prefix;
 	protected final Type type;
