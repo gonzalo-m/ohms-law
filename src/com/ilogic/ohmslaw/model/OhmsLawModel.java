@@ -96,8 +96,7 @@ public class OhmsLawModel extends Observable {
 	public void setPower(double powerQuantity) {
 		this.power.quantity = powerQuantity;
 	}
-	
-	
+
 	/**
 	 * 
 	 * @return true if the object has two valid values (greater than zero),
@@ -215,7 +214,7 @@ public class OhmsLawModel extends Observable {
 	
 	@Override
 	public String toString() {
-		return "OhmsLawMode [voltage=" + voltage + ", current=" + current
+		return "OhmsLawModel [voltage=" + voltage + ", current=" + current
 				+ ", resistance=" + resistance + ", power=" + power + "]";
 	}
 }
