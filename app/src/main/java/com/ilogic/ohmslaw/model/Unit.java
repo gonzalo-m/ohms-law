@@ -16,7 +16,7 @@ public class Unit implements Serializable {
 		this.prefix = prefix;
 		this.type = type;
 		
-		decimalPlaces = new DecimalFormat("#0.##"); // default
+		decimalPlaces = new DecimalFormat("#0"); // default
 		autorange = true; // default
 	}
 	
