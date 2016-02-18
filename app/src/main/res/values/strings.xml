@@ -3,7 +3,7 @@
     <string name="app_name">Ohm\'s Law</string>
     
     <!-- Fields labels -->
-    <string name="label_volts">Volts</string>
+    <string name="label_volts">Volts.\u00B7\u2E33</string>
     <string name="label_amps">Amps</string>
     <string name="label_ohms">Ohms</string>
     <string name="label_watts">Watts</string>
