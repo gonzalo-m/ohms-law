@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/Users/G/Development/Published/OhmsLaw/2.0/ohms-law/app/src/main/res/values/arrays.xml -->
-    <eat-comment/>
     <string-array name="displayArray">
 	   <item>1 decimal</item>
 	   <item>2 decimals</item>
@@ -40,8 +38,6 @@
 	   <item>8</item>
 	   <item>9</item>
 	</string-array>
-    <!-- From: file:/Users/G/Development/Published/OhmsLaw/2.0/ohms-law/app/src/main/res/values/colors.xml -->
-    <eat-comment/>
     <color name="aqua">#00FFFF</color>
     <color name="black">#000000</color>
     <color name="blue">#0000FF</color>
@@ -64,8 +60,6 @@
     <color name="white">#FFFFFF</color>
     <color name="yellow">#FFFF00</color>
     <declare-styleable name="ListPreferenceMultiSelect"><attr format="string" name="checkAll"/><attr format="string" name="separator"/></declare-styleable>
-    <!-- From: file:/Users/G/Development/Published/OhmsLaw/2.0/ohms-law/app/src/main/res/values/strings.xml -->
-    <eat-comment/>
     <string name="app_description">This Ohm\'s Law app allows you to calculate any 2 unknown values
      by entering 2 known values.
      \n\nA common calculator for the electrical field. 
@@ -124,8 +118,6 @@
         \t• New SI prefix buttons\n
         \t• Relocated reset button</string>
     <string name="zero">0</string>
-    <!-- From: file:/Users/G/Development/Published/OhmsLaw/2.0/ohms-law/app/src/main/res/values/styles.xml -->
-    <eat-comment/>
     <style name="AppBaseTheme" parent="android:Theme.Light">
         <!--
             Theme customizations available in newer API levels can go in

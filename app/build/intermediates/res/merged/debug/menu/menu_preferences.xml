@@ -25,4 +25,3 @@
           android:icon="@android:drawable/ic_menu_help"
           android:title="@string/menu_autorange" />
 </menu>
-<!-- From: file:/Users/G/Development/Published/OhmsLaw/2.0/ohms-law/app/src/main/res/menu/menu_preferences.xml -->

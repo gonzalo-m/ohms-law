@@ -41,4 +41,4 @@
             android:selectable="true"
             android:key="versionPref" /></PreferenceCategory>
     
-</PreferenceScreen><!-- From: file:/Users/G/Development/Published/OhmsLaw/2.0/ohms-law/app/src/main/res/xml/preferences.xml -->
+</PreferenceScreen>
