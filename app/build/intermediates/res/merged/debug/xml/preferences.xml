@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    
+    <PreferenceCategory android:title="Calculator">
+        <ListPreference android:title="Decimal precision"
+	        android:summary="@string/prefs_dec_precision"
+	        android:key="decimalPlaces"
+	        android:defaultValue="2"
+	        android:entries="@array/displayArray"
+	        android:entryValues="@array/valuesArray"/>
+        
+    	<CheckBoxPreference android:title="Autorange"
+            android:summary="@string/prefs_autorange"
+            android:defaultValue="true"
+            android:key="autorange" /></PreferenceCategory>
+    
+    	<com.ilogic.ohmslaw.preferences.MyCheckBoxListPreference 
+    	    android:title="SI prefix"
+    	    android:dialogTitle="Enable SI prefix buttons"
+	        android:summary="@string/prefs_siButtons"
+	        android:key="siButtons"
+	        android:defaultValue="milli,kilo"
+	        android:entries="@array/prefEntries_SIPrefixes"
+	        android:entryValues="@array/prefValues_SIPrefixes"/>
+    
+    <PreferenceCategory android:title="About">
+        
+        <Preference android:title="Send feedback"
+            android:summary="@string/prefs_send_feedback"
+            android:defaultValue="true"
+            android:key="feedbackPref" />
+        
+        <Preference android:title="Rate this app"
+            android:summary="@string/prefs_rate_app"
+            android:defaultValue="true"
+            android:key="rateAppPref" />
+        
+        <Preference android:title="Software version"
+            android:summary="@string/soft_version"
+            android:selectable="true"
+            android:key="versionPref" /></PreferenceCategory>
+    
+</PreferenceScreen><!-- From: file:/Users/G/Development/Published/OhmsLaw/2.0/ohms-law/app/src/main/res/xml/preferences.xml -->

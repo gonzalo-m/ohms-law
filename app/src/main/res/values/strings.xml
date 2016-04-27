@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Ohm\'s Law</string>
+    
+    <!-- Fields labels -->
+    <string name="label_volts">Volts</string>
+    <string name="label_amps">Amps</string>
+    <string name="label_ohms">Ohms</string>
+    <string name="label_watts">Watts</string>
+    
+    <!-- Keypad buttons -->
+    <string name="zero">0</string>
+    <string name="one">1</string>
+    <string name="two">2</string>
+    <string name="three">3</string>
+    <string name="four">4</string>
+    <string name="five">5</string>
+    <string name="six">6</string>
+    <string name="seven">7</string>
+    <string name="eight">8</string>
+    <string name="nine">9</string>
+    <string name="point">.</string>
+    <string name="delete">Del</string>
+    <string name="reset">Reset</string>
+    <string name="nano">n</string>
+    <string name="micro">\u03BC</string>
+    <string name="milli">m</string>
+    <string name="kilo">k</string>
+    <string name="mega">M</string>
+    <string name="giga">G</string>
+    
+    <!-- Menu -->
+    <string name="menu_preferences">Preferences</string>
+    <string name="menu_help">Help</string>
+    <string name="menu_autorange">Autorange</string>
+    
+    <!-- Preferences -->
+    <string name="preferences_title">Settings</string>
+    <string name="prefs_dec_precision">Set the number of decimals places for output values</string>
+    <string name="prefs_autorange">Convert to SI prefixes automatically</string>
+    <string name="prefs_siButtons">"Enable SI prefix buttons"</string>
+    <string name="prefs_send_feedback">Email feedback or questions regarding this app to gmartz21@gmail.com</string>
+    <string name="prefs_rate_app">Support free app development by leaving us a positive review</string>
+    <string name="soft_version">2.0</string>
+    
+    
+    <string name="menu_settings">Settings</string>
+    
+    <!-- NUMERIC PAD LABELS FOR "layout-small-land" ONLY-->
+    <string name="tv_small_land_save">S</string>
+    <string name="tv_small_land_reset">R</string>
+    
+    
+    <!-- OTHER -->
+    <string name="version1_01">1.01\n
+        \t• New custom numeric pad for portrait and landscape mode</string>
+    <string name="version2_0">2.0\n
+        \t• Settings to adjust decimal precision\n
+        \t• Autorange \n
+        \t• Improved user interface\n
+        \t• New SI prefix buttons\n
+        \t• Relocated reset button</string>
+    <string name="change_log">
+        2.0\n
+        • Settings to adjust decimal precision\n
+        • Autorange\n
+        • New SI prefix buttons\n
+        • Improved user interface\n
+        • Relocated reset button\n\n
+        1.01\n
+        • Custom numeric pad</string>
+    
+    <string name="app_description">This Ohm\'s Law app allows you to calculate any 2 unknown values
+     by entering 2 known values.
+     \n\nA common calculator for the electrical field. 
+     \n\nTags: ohm\'s law, electrical, calculator, electrician, electronics.</string>
+</resources>
