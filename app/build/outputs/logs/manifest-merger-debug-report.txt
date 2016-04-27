@@ -17,6 +17,27 @@ ADDED from /Users/G/Development/Published/OhmsLaw/2.0/ohms-law/app/src/main/Andr
 		ADDED from /Users/G/Development/Published/OhmsLaw/2.0/ohms-law/app/src/main/AndroidManifest.xml:2:11-69
 uses-sdk
 ADDED from /Users/G/Development/Published/OhmsLaw/2.0/ohms-law/app/src/main/AndroidManifest.xml:6:5-42
+MERGED from [com.android.support:appcompat-v7:23.3.0] /Users/G/Development/Published/OhmsLaw/2.0/ohms-law/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:support-vector-drawable:23.3.0] /Users/G/Development/Published/OhmsLaw/2.0/ohms-law/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/23.3.0/AndroidManifest.xml:5:5-43
+MERGED from [com.android.support:support-v4:23.3.0] /Users/G/Development/Published/OhmsLaw/2.0/ohms-law/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.3.0/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:animated-vector-drawable:23.3.0] /Users/G/Development/Published/OhmsLaw/2.0/ohms-law/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/23.3.0/AndroidManifest.xml:5:5-44
+MERGED from [com.android.support:support-vector-drawable:23.3.0] /Users/G/Development/Published/OhmsLaw/2.0/ohms-law/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/23.3.0/AndroidManifest.xml:5:5-43
+MERGED from [com.android.support:support-v4:23.3.0] /Users/G/Development/Published/OhmsLaw/2.0/ohms-law/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.3.0/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:23.3.0] /Users/G/Development/Published/OhmsLaw/2.0/ohms-law/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.3.0/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:23.3.0] /Users/G/Development/Published/OhmsLaw/2.0/ohms-law/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.3.0/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:design:23.3.0] /Users/G/Development/Published/OhmsLaw/2.0/ohms-law/app/build/intermediates/exploded-aar/com.android.support/design/23.3.0/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:appcompat-v7:23.3.0] /Users/G/Development/Published/OhmsLaw/2.0/ohms-law/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:support-vector-drawable:23.3.0] /Users/G/Development/Published/OhmsLaw/2.0/ohms-law/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/23.3.0/AndroidManifest.xml:5:5-43
+MERGED from [com.android.support:support-v4:23.3.0] /Users/G/Development/Published/OhmsLaw/2.0/ohms-law/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.3.0/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:animated-vector-drawable:23.3.0] /Users/G/Development/Published/OhmsLaw/2.0/ohms-law/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/23.3.0/AndroidManifest.xml:5:5-44
+MERGED from [com.android.support:support-vector-drawable:23.3.0] /Users/G/Development/Published/OhmsLaw/2.0/ohms-law/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/23.3.0/AndroidManifest.xml:5:5-43
+MERGED from [com.android.support:support-v4:23.3.0] /Users/G/Development/Published/OhmsLaw/2.0/ohms-law/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.3.0/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:23.3.0] /Users/G/Development/Published/OhmsLaw/2.0/ohms-law/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.3.0/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:23.3.0] /Users/G/Development/Published/OhmsLaw/2.0/ohms-law/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.3.0/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:recyclerview-v7:23.3.0] /Users/G/Development/Published/OhmsLaw/2.0/ohms-law/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.3.0/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:23.3.0] /Users/G/Development/Published/OhmsLaw/2.0/ohms-law/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.3.0/AndroidManifest.xml:20:5-43
+	tools:overrideLibrary
+		ADDED from [com.android.support:appcompat-v7:23.3.0] /Users/G/Development/Published/OhmsLaw/2.0/ohms-law/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/AndroidManifest.xml:23:9-75
 	android:targetSdkVersion
 		INJECTED from /Users/G/Development/Published/OhmsLaw/2.0/ohms-law/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/G/Development/Published/OhmsLaw/2.0/ohms-law/app/src/main/AndroidManifest.xml
@@ -34,6 +55,24 @@ ADDED from /Users/G/Development/Published/OhmsLaw/2.0/ohms-law/app/src/main/Andr
 		ADDED from /Users/G/Development/Published/OhmsLaw/2.0/ohms-law/app/src/main/AndroidManifest.xml:9:15-43
 application
 ADDED from /Users/G/Development/Published/OhmsLaw/2.0/ohms-law/app/src/main/AndroidManifest.xml:12:5-30:19
+MERGED from [com.android.support:appcompat-v7:23.3.0] /Users/G/Development/Published/OhmsLaw/2.0/ohms-law/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-vector-drawable:23.3.0] /Users/G/Development/Published/OhmsLaw/2.0/ohms-law/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/23.3.0/AndroidManifest.xml:7:5-20
+MERGED from [com.android.support:support-v4:23.3.0] /Users/G/Development/Published/OhmsLaw/2.0/ohms-law/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.3.0/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:animated-vector-drawable:23.3.0] /Users/G/Development/Published/OhmsLaw/2.0/ohms-law/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/23.3.0/AndroidManifest.xml:7:5-20
+MERGED from [com.android.support:support-vector-drawable:23.3.0] /Users/G/Development/Published/OhmsLaw/2.0/ohms-law/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/23.3.0/AndroidManifest.xml:7:5-20
+MERGED from [com.android.support:support-v4:23.3.0] /Users/G/Development/Published/OhmsLaw/2.0/ohms-law/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.3.0/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.3.0] /Users/G/Development/Published/OhmsLaw/2.0/ohms-law/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.3.0/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.3.0] /Users/G/Development/Published/OhmsLaw/2.0/ohms-law/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.3.0/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design:23.3.0] /Users/G/Development/Published/OhmsLaw/2.0/ohms-law/app/build/intermediates/exploded-aar/com.android.support/design/23.3.0/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:appcompat-v7:23.3.0] /Users/G/Development/Published/OhmsLaw/2.0/ohms-law/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-vector-drawable:23.3.0] /Users/G/Development/Published/OhmsLaw/2.0/ohms-law/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/23.3.0/AndroidManifest.xml:7:5-20
+MERGED from [com.android.support:support-v4:23.3.0] /Users/G/Development/Published/OhmsLaw/2.0/ohms-law/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.3.0/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:animated-vector-drawable:23.3.0] /Users/G/Development/Published/OhmsLaw/2.0/ohms-law/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/23.3.0/AndroidManifest.xml:7:5-20
+MERGED from [com.android.support:support-vector-drawable:23.3.0] /Users/G/Development/Published/OhmsLaw/2.0/ohms-law/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/23.3.0/AndroidManifest.xml:7:5-20
+MERGED from [com.android.support:support-v4:23.3.0] /Users/G/Development/Published/OhmsLaw/2.0/ohms-law/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.3.0/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.3.0] /Users/G/Development/Published/OhmsLaw/2.0/ohms-law/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.3.0/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.3.0] /Users/G/Development/Published/OhmsLaw/2.0/ohms-law/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.3.0/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.3.0] /Users/G/Development/Published/OhmsLaw/2.0/ohms-law/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.3.0/AndroidManifest.xml:22:5-20
 	android:label
 		ADDED from /Users/G/Development/Published/OhmsLaw/2.0/ohms-law/app/src/main/AndroidManifest.xml:15:6-38
 	android:allowBackup

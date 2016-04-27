@@ -15,6 +15,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.SystemClock;
 import android.preference.PreferenceManager;
+import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.Html;
 import android.text.TextWatcher;
@@ -38,7 +39,7 @@ import com.ilogic.ohmslaw.model.Type;
 import com.ilogic.ohmslaw.model.Unit;
 import com.ilogic.ohmslaw.preferences.Preferences;
 
-public class MainActivity extends Activity implements Observer, OnClickListener, 
+public class MainActivity extends AppCompatActivity implements Observer, OnClickListener,
 					OnFocusChangeListener, TextWatcher, OnKeyListener {
 
 	protected OhmsLawModel mOhmsLaw;
