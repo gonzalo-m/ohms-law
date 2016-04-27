@@ -6,8 +6,8 @@ android {
 
     defaultConfig {
         applicationId "com.ilogic.ohmslaw"
-        minSdkVersion 7
-        targetSdkVersion 7
+        minSdkVersion 16
+        targetSdkVersion 23
     }
 
     buildTypes {
