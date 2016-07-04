@@ -16,7 +16,7 @@ public enum Prefix {
 	private char symbol;
 	private int magnitude;
 	
-	private Prefix(char symbol, int magnitude) {
+	Prefix(char symbol, int magnitude) {
 		this.symbol = symbol;
 		this.magnitude = magnitude;
 	}
@@ -29,7 +29,7 @@ public enum Prefix {
 		return magnitude;
 	}
 	
-	public Prefix getPrefix(int magnitudeIn) {
+	public static Prefix getPrefix(int magnitudeIn) {
 		for (Prefix p : Prefix.values()) {
 			if (p.getMagnitude() == magnitudeIn) 
 				return p;
