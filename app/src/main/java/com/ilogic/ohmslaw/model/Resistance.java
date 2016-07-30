@@ -5,6 +5,10 @@ package com.ilogic.ohmslaw.model;
  */
 public class Resistance extends UnitNew {
 
+    public Resistance() {
+        super();
+    }
+    
     public Resistance(double quantity, Prefix prefix) {
         super(quantity, prefix);
     }

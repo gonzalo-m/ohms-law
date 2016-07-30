@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/apodos"
+            android:icon="@drawable/icon"
+            android:title="Buenos para los apodos" />
+        <item
+            android:id="@+id/descubre_frase"
+            android:icon="@drawable/icon"
+            android:title="Descubre la frase" />
+        <item
+            android:id="@+id/nav_slideshow"
+            android:icon="@drawable/icon"
+            android:title="Nuestras Raices Trivia" />
+        <item
+            android:id="@+id/nav_manage"
+            android:icon="@drawable/icon"
+            android:title="Tools" />
+    </group>
+
+    <item android:title="Puntajes">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/icon"
+                android:title="Share" />
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/icon"
+                android:title="Send" />
+        </menu>
+    </item>
+
+</menu>

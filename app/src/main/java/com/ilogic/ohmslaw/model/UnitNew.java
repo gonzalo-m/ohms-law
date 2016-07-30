@@ -1,16 +1,20 @@
 package com.ilogic.ohmslaw.model;
 
-import static com.ilogic.ohmslaw.model.Prefix.getPrefix;
-
 /**
  * Created by G on 7/3/16.
  */
 public class UnitNew {
 
+    public static final double ZERO = 0.0d;
+
     private static boolean sAutoRange;
 
     private double quantity;
     private Prefix prefix;
+
+    public UnitNew() {
+        this(ZERO, Prefix.NONE);
+    }
 
     public UnitNew(double quantity, Prefix prefix) {
         this.quantity = quantity;
@@ -34,7 +38,7 @@ public class UnitNew {
         this.quantity = quantity;
     }
 
-    public char getPrefixSymbol() {
+    public String getPrefixSymbol() {
         return prefix.getSymbol();
     }
 
@@ -46,6 +50,10 @@ public class UnitNew {
         this.prefix = prefix;
     }
 
+    public boolean isGreaterThanZero() {
+        return Double.compare(quantity, ZERO) > 0;
+    }
+
     public static UnitNew multiply(UnitNew lhs, UnitNew rhs) {
         double qty = lhs.quantity * rhs.quantity;
         int mag = lhs.prefix.getMagnitude() + rhs.prefix.getMagnitude();
@@ -53,8 +61,11 @@ public class UnitNew {
     }
 
     public static UnitNew divide(UnitNew lhs, UnitNew rhs) {
+        if (!rhs.isGreaterThanZero()) {
+            return new UnitNew();
+        }
         double qty = lhs.quantity / rhs.quantity;
-        int mag = lhs.prefix.getMagnitude() / rhs.prefix.getMagnitude();
+        int mag = lhs.prefix.getMagnitude() - rhs.prefix.getMagnitude();
         return newBoundedUnit(qty, mag);
     }
 
@@ -100,5 +111,12 @@ public class UnitNew {
         }
 
         return new UnitNew(currQuantity, Prefix.getPrefix(currMagnitude));
+    }
+
+    @Override
+    public String toString() {
+        return "{" + quantity +
+                "," + prefix +
+                '}';
     }
 }

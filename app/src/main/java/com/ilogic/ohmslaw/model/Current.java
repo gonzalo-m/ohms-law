@@ -5,6 +5,10 @@ package com.ilogic.ohmslaw.model;
  */
 public class Current extends UnitNew {
 
+    public Current() {
+        super();
+    }
+    
     public Current(double quantity, Prefix prefix) {
         super(quantity, prefix);
     }

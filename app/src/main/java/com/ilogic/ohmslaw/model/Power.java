@@ -5,6 +5,10 @@ package com.ilogic.ohmslaw.model;
  */
 public class Power extends UnitNew {
 
+    public Power() {
+        super();
+    }
+
     public Power(double quantity, Prefix prefix) {
         super(quantity, prefix);
     }

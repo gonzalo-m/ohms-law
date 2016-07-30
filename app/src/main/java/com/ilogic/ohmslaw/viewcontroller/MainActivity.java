@@ -292,23 +292,23 @@ public class MainActivity extends AppCompatActivity implements Observer, OnClick
 
 	@Override
 	public void update(Observable arg0, Object arg1) {
-		if (!inputFields[0].isEnabled()) {
-			inputFields[0].setText(mOhmsLaw.getVoltage().toCurrentDecimals());
-			setPrefix(inputFields[0], mOhmsLaw.getVoltage().getPrefix().getSymbol());
-		}
-		if (!inputFields[1].isEnabled()) {
-			inputFields[1].setText(mOhmsLaw.getCurrent().toCurrentDecimals());
-			setPrefix(inputFields[1], mOhmsLaw.getCurrent().getPrefix().getSymbol());
-		}
-		if (!inputFields[2].isEnabled()) {
-			inputFields[2].setText(mOhmsLaw.getResistance().toCurrentDecimals());
-			setPrefix(inputFields[2], mOhmsLaw.getResistance().getPrefix().getSymbol());
-			
-		}
-		if (!inputFields[3].isEnabled()) {
-			inputFields[3].setText(mOhmsLaw.getPower().toCurrentDecimals());
-			setPrefix(inputFields[3], mOhmsLaw.getPower().getPrefix().getSymbol());
-		}
+//		if (!inputFields[0].isEnabled()) {
+//			inputFields[0].setText(mOhmsLaw.getVoltage().toCurrentDecimals());
+//			setPrefix(inputFields[0], mOhmsLaw.getVoltage().getPrefix().getSymbol());
+//		}
+//		if (!inputFields[1].isEnabled()) {
+//			inputFields[1].setText(mOhmsLaw.getCurrent().toCurrentDecimals());
+//			setPrefix(inputFields[1], mOhmsLaw.getCurrent().getPrefix().getSymbol());
+//		}
+//		if (!inputFields[2].isEnabled()) {
+//			inputFields[2].setText(mOhmsLaw.getResistance().toCurrentDecimals());
+//			setPrefix(inputFields[2], mOhmsLaw.getResistance().getPrefix().getSymbol());
+//
+//		}
+//		if (!inputFields[3].isEnabled()) {
+//			inputFields[3].setText(mOhmsLaw.getPower().toCurrentDecimals());
+//			setPrefix(inputFields[3], mOhmsLaw.getPower().getPrefix().getSymbol());
+//		}
 		System.out.println("updtate method called");
 	}
 	
@@ -749,96 +749,96 @@ public class MainActivity extends AppCompatActivity implements Observer, OnClick
 		int idCombination = savedInstanceState.getInt(SAVED_FIELDS_IDCOMB);
 		
 		switch (idCombination) {
-			case 2:
-				inputFields[0].requestFocus();
-				setPrefix(inputFields[0], savedVoltage.getPrefix().getSymbol());
-				inputFields[0].setText(savedVoltage.toCurrentDecimals());
-				mOhmsLaw.setVoltage(savedVoltage);
-				break;
-			case 3:
-				inputFields[1].requestFocus();
-				setPrefix(inputFields[1], savedCurrent.getPrefix().getSymbol());
-				inputFields[1].setText(savedCurrent.toCurrentDecimals());
-				mOhmsLaw.setCurrent(savedCurrent);
-				break;
-			case 5:
-				inputFields[2].requestFocus();
-				setPrefix(inputFields[2], savedResistance.getPrefix().getSymbol());
-				inputFields[2].setText(savedResistance.toCurrentDecimals());
-				mOhmsLaw.setResistance(savedResistance);
-				break;
-			case 6:
-				inputFields[0].requestFocus();
-				setPrefix(inputFields[0], savedVoltage.getPrefix().getSymbol());
-				inputFields[0].setText(savedVoltage.toCurrentDecimals());
-				mOhmsLaw.setVoltage(savedVoltage);
-				inputFields[1].requestFocus();
-				setPrefix(inputFields[1], savedCurrent.getPrefix().getSymbol());
-				inputFields[1].setText(savedCurrent.toCurrentDecimals());
-				mOhmsLaw.setCurrent(savedCurrent);
-				mOhmsLaw.calculateUnknownValues(idCombination);
-				break;
-			case 7:
-				inputFields[3].requestFocus();
-				setPrefix(inputFields[3], savedPower.getPrefix().getSymbol());
-				inputFields[3].setText(savedPower.toCurrentDecimals());
-				mOhmsLaw.setPower(savedPower);
-				break;
-			case 10:
-				inputFields[0].requestFocus();
-				setPrefix(inputFields[0], savedVoltage.getPrefix().getSymbol());
-				inputFields[0].setText(savedVoltage.toCurrentDecimals());
-				mOhmsLaw.setVoltage(savedVoltage);
-				inputFields[2].requestFocus();
-				setPrefix(inputFields[2], savedResistance.getPrefix().getSymbol());
-				inputFields[2].setText(savedResistance.toCurrentDecimals());
-				mOhmsLaw.setResistance(savedResistance);
-				mOhmsLaw.calculateUnknownValues(idCombination);
-				break;
-			case 14:
-				inputFields[0].requestFocus();
-				setPrefix(inputFields[0], savedVoltage.getPrefix().getSymbol());
-				inputFields[0].setText(savedVoltage.toCurrentDecimals());
-				mOhmsLaw.setVoltage(savedVoltage);
-				inputFields[3].requestFocus();
-				setPrefix(inputFields[3], savedPower.getPrefix().getSymbol());
-				inputFields[3].setText(savedPower.toCurrentDecimals());
-				mOhmsLaw.setPower(savedPower);
-				mOhmsLaw.calculateUnknownValues(idCombination);
-				break;
-			case 15:
-				inputFields[1].requestFocus();
-				setPrefix(inputFields[1], savedCurrent.getPrefix().getSymbol());
-				inputFields[1].setText(savedCurrent.toCurrentDecimals());
-				mOhmsLaw.setCurrent(savedCurrent);
-				inputFields[2].requestFocus();
-				setPrefix(inputFields[2], savedResistance.getPrefix().getSymbol());
-				inputFields[2].setText(savedResistance.toCurrentDecimals());
-				mOhmsLaw.setResistance(savedResistance);
-				mOhmsLaw.calculateUnknownValues(idCombination);
-				break;
-			case 21:
-				inputFields[1].requestFocus();
-				setPrefix(inputFields[1], savedCurrent.getPrefix().getSymbol());
-				inputFields[1].setText(savedCurrent.toCurrentDecimals());
-				mOhmsLaw.setCurrent(savedCurrent);
-				inputFields[3].requestFocus();
-				setPrefix(inputFields[3], savedPower.getPrefix().getSymbol());
-				inputFields[3].setText(savedPower.toCurrentDecimals());
-				mOhmsLaw.setPower(savedPower);
-				mOhmsLaw.calculateUnknownValues(idCombination);
-				break;
-			case 35:
-				inputFields[2].requestFocus();
-				setPrefix(inputFields[2], savedResistance.getPrefix().getSymbol());
-				inputFields[2].setText(savedResistance.toCurrentDecimals());
-				mOhmsLaw.setResistance(savedResistance);
-				inputFields[3].requestFocus();
-				setPrefix(inputFields[3], savedPower.getPrefix().getSymbol());
-				inputFields[3].setText(savedPower.toCurrentDecimals());
-				mOhmsLaw.setPower(savedPower);
-				mOhmsLaw.calculateUnknownValues(idCombination);
-				break;
+//			case 2:
+//				inputFields[0].requestFocus();
+//				setPrefix(inputFields[0], savedVoltage.getPrefix().getSymbol());
+//				inputFields[0].setText(savedVoltage.toCurrentDecimals());
+//				mOhmsLaw.setVoltage(savedVoltage);
+//				break;
+//			case 3:
+//				inputFields[1].requestFocus();
+//				setPrefix(inputFields[1], savedCurrent.getPrefix().getSymbol());
+//				inputFields[1].setText(savedCurrent.toCurrentDecimals());
+//				mOhmsLaw.setCurrent(savedCurrent);
+//				break;
+//			case 5:
+//				inputFields[2].requestFocus();
+//				setPrefix(inputFields[2], savedResistance.getPrefix().getSymbol());
+//				inputFields[2].setText(savedResistance.toCurrentDecimals());
+//				mOhmsLaw.setResistance(savedResistance);
+//				break;
+//			case 6:
+//				inputFields[0].requestFocus();
+//				setPrefix(inputFields[0], savedVoltage.getPrefix().getSymbol());
+//				inputFields[0].setText(savedVoltage.toCurrentDecimals());
+//				mOhmsLaw.setVoltage(savedVoltage);
+//				inputFields[1].requestFocus();
+//				setPrefix(inputFields[1], savedCurrent.getPrefix().getSymbol());
+//				inputFields[1].setText(savedCurrent.toCurrentDecimals());
+//				mOhmsLaw.setCurrent(savedCurrent);
+//				mOhmsLaw.calculateUnknownValues(idCombination);
+//				break;
+//			case 7:
+//				inputFields[3].requestFocus();
+//				setPrefix(inputFields[3], savedPower.getPrefix().getSymbol());
+//				inputFields[3].setText(savedPower.toCurrentDecimals());
+//				mOhmsLaw.setPower(savedPower);
+//				break;
+//			case 10:
+//				inputFields[0].requestFocus();
+//				setPrefix(inputFields[0], savedVoltage.getPrefix().getSymbol());
+//				inputFields[0].setText(savedVoltage.toCurrentDecimals());
+//				mOhmsLaw.setVoltage(savedVoltage);
+//				inputFields[2].requestFocus();
+//				setPrefix(inputFields[2], savedResistance.getPrefix().getSymbol());
+//				inputFields[2].setText(savedResistance.toCurrentDecimals());
+//				mOhmsLaw.setResistance(savedResistance);
+//				mOhmsLaw.calculateUnknownValues(idCombination);
+//				break;
+//			case 14:
+//				inputFields[0].requestFocus();
+//				setPrefix(inputFields[0], savedVoltage.getPrefix().getSymbol());
+//				inputFields[0].setText(savedVoltage.toCurrentDecimals());
+//				mOhmsLaw.setVoltage(savedVoltage);
+//				inputFields[3].requestFocus();
+//				setPrefix(inputFields[3], savedPower.getPrefix().getSymbol());
+//				inputFields[3].setText(savedPower.toCurrentDecimals());
+//				mOhmsLaw.setPower(savedPower);
+//				mOhmsLaw.calculateUnknownValues(idCombination);
+//				break;
+//			case 15:
+//				inputFields[1].requestFocus();
+//				setPrefix(inputFields[1], savedCurrent.getPrefix().getSymbol());
+//				inputFields[1].setText(savedCurrent.toCurrentDecimals());
+//				mOhmsLaw.setCurrent(savedCurrent);
+//				inputFields[2].requestFocus();
+//				setPrefix(inputFields[2], savedResistance.getPrefix().getSymbol());
+//				inputFields[2].setText(savedResistance.toCurrentDecimals());
+//				mOhmsLaw.setResistance(savedResistance);
+//				mOhmsLaw.calculateUnknownValues(idCombination);
+//				break;
+//			case 21:
+//				inputFields[1].requestFocus();
+//				setPrefix(inputFields[1], savedCurrent.getPrefix().getSymbol());
+//				inputFields[1].setText(savedCurrent.toCurrentDecimals());
+//				mOhmsLaw.setCurrent(savedCurrent);
+//				inputFields[3].requestFocus();
+//				setPrefix(inputFields[3], savedPower.getPrefix().getSymbol());
+//				inputFields[3].setText(savedPower.toCurrentDecimals());
+//				mOhmsLaw.setPower(savedPower);
+//				mOhmsLaw.calculateUnknownValues(idCombination);
+//				break;
+//			case 35:
+//				inputFields[2].requestFocus();
+//				setPrefix(inputFields[2], savedResistance.getPrefix().getSymbol());
+//				inputFields[2].setText(savedResistance.toCurrentDecimals());
+//				mOhmsLaw.setResistance(savedResistance);
+//				inputFields[3].requestFocus();
+//				setPrefix(inputFields[3], savedPower.getPrefix().getSymbol());
+//				inputFields[3].setText(savedPower.toCurrentDecimals());
+//				mOhmsLaw.setPower(savedPower);
+//				mOhmsLaw.calculateUnknownValues(idCombination);
+//				break;
 		}
 		
 		switch (savedInstanceState.getInt(SAVED_FOCUSED_VIEW)) {

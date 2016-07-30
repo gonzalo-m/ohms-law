@@ -21,4 +21,8 @@
 	 <color name="black">#000000</color>
 	 <color name="light_blue">#449def</color>
 	 <color name="button_color">#2f6699</color>
+
+	<color name="colorPrimary">#3F51B5</color>
+	<color name="colorPrimaryDark">#303F9F</color>
+	<color name="colorAccent">#FF4081</color>
 </resources>

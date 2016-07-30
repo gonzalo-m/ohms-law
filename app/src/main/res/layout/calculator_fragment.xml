@@ -1,0 +1,78 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linear_layout_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/background_white"
+    tools:context=".view.NewMainActivity" >
+
+    <!-- *******************  Fields  ************************ -->
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp">
+
+        <TableRow
+            style="@style/rows_style">
+
+            <TextView
+                android:id="@+id/volts_textview"
+                style="@style/labels_style"
+                android:text="@string/label_volts"/>
+
+            <EditText
+                android:id="@+id/volts_edittext"
+                style="@style/fields_style" />
+
+        </TableRow>
+
+        <TableRow
+            style="@style/rows_style">
+
+            <TextView
+                android:id="@+id/amps_textview"
+                style="@style/labels_style"
+                android:text="@string/label_amps"/>
+
+            <EditText
+                android:id="@+id/amps_edittext"
+                style="@style/fields_style"/></TableRow>
+
+        <TableRow
+            style="@style/rows_style">
+
+            <TextView
+                android:id="@+id/ohms_textview"
+                style="@style/labels_style"
+                android:text="@string/label_ohms"/>
+
+            <EditText
+                android:id="@+id/ohms_edittext"
+                style="@style/fields_style"/></TableRow>
+
+        <TableRow
+            style="@style/rows_style">
+
+            <TextView
+                android:id="@+id/watts_textview"
+                style="@style/labels_style"
+                android:text="@string/label_watts"/>
+
+            <EditText
+                android:id="@+id/watts_edittext"
+                style="@style/fields_style"/></TableRow></TableLayout>
+
+    <!-- This view is left empty for future ad implementation -->
+    <LinearLayout
+        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:layout_weight="1"></LinearLayout>
+
+    <include layout="@layout/calculator_keypad"/>
+
+</LinearLayout>

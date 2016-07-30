@@ -10,14 +10,15 @@
               android:largeScreens="true"/>
 
     <application
-        android:theme="@style/Theme.AppCompat.Light"
+        android:theme="@style/AppTheme"
         android:allowBackup="true"
         android:icon="@drawable/icon" 
     	android:label="@string/app_name">
-        <activity android:name="com.ilogic.ohmslaw.viewcontroller.MainActivity"
+        <activity android:name="com.ilogic.ohmslaw.view.NewMainActivity"
         		  android:configChanges="keyboardHidden"
         		  android:windowSoftInputMode="stateAlwaysHidden"
-                  android:label="@string/app_name">
+                  android:label="@string/app_name"
+                    android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -26,7 +27,7 @@
         
         <activity android:name="com.ilogic.ohmslaw.preferences.Preferences"
                   android:label="@string/preferences_title"
-                  android:theme="@android:style/Theme.Light">
+                  android:theme="@style/AppTheme.NoActionBar">
         </activity>
     </application>
 </manifest>

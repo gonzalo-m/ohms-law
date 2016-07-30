@@ -1,6 +1,6 @@
-import com.ilogic.ohmslaw.model.CalculatorPresenter;
-import com.ilogic.ohmslaw.model.CalculatorPresenterImpl;
-import com.ilogic.ohmslaw.model.CalculatorView;
+import com.ilogic.ohmslaw.presenter.CalculatorPresenter;
+import com.ilogic.ohmslaw.presenter.CalculatorPresenterImpl;
+import com.ilogic.ohmslaw.view.CalculatorView;
 
 /**
  * Created by G on 7/4/16.
@@ -13,6 +13,11 @@ public class CalculatorViewStub implements CalculatorView {
     public String mResistanceQty, mResistancePrefixSymbol;
     public String mPowerQty, mPowerPrefixSymbol;
 
+    public boolean didSetVoltageEditText;
+    public boolean didSetCurrentEditText;
+    public boolean didSetResistanceEditText;
+    public boolean didSetPowerEditText;
+
 
     public CalculatorViewStub() {
         mCalcPresenter = new CalculatorPresenterImpl(this);
@@ -24,47 +29,84 @@ public class CalculatorViewStub implements CalculatorView {
     }
 
     @Override
-    public void getVoltageInput() {
+    public String getVoltageInput() {
+        return null;
+    }
+
+    @Override
+    public String getCurrentInput() {
+        return null;
+    }
+
+    @Override
+    public String getResistanceInput() {
+        return null;
+    }
+
+    @Override
+    public String getPowerInput() {
+        return null;
+    }
+
+
+    @Override
+    public void setVoltageEditText(String qty) {
+        didSetVoltageEditText = true;
+    }
+
+    @Override
+    public void setCurrentEditText(String qty) {
+        didSetCurrentEditText = true;
+    }
+
+    @Override
+    public void setResistanceEditText(String qty) {
+        didSetResistanceEditText = true;
+    }
+
+    @Override
+    public void setPowerEditText(String qty) {
+        didSetPowerEditText = true;
+    }
+
+    @Override
+    public void setVoltagePrefixText(String pfx) {
 
     }
 
     @Override
-    public void getCurrentInput() {
+    public void setCurrentPrefixText(String pfx) {
 
     }
 
     @Override
-    public void getResistanceInput() {
+    public void setResistancePrefixText(String pfx) {
 
     }
 
     @Override
-    public void getPowerInput() {
+    public void setPowerPrefixText(String pfx) {
 
     }
 
     @Override
-    public void setVoltage(String qty, String prefix) {
-        mVoltageQty = qty;
-        mVoltagePrefixSymbol = prefix;
+    public void setVoltageViews(String qty, String pfx) {
+
     }
 
     @Override
-    public void setCurrent(String qty, String prefix) {
-        mCurrentQty = qty;
-        mCurrentPrefixSymbol = prefix;
+    public void setCurrentViews(String qty, String pfx) {
+
     }
 
     @Override
-    public void setResistance(String qty, String prefix) {
-        mResistanceQty = qty;
-        mResistancePrefixSymbol = prefix;
+    public void setResistanceViews(String qty, String pfx) {
+
     }
 
     @Override
-    public void setPower(String qty, String prefix) {
-        mPowerQty = qty;
-        mPowerPrefixSymbol = prefix;
+    public void setPowerViews(String qty, String pfx) {
+
     }
 
     @Override
@@ -85,5 +127,145 @@ public class CalculatorViewStub implements CalculatorView {
     @Override
     public void setPowerEditTextEnabled(boolean enabled) {
 
+    }
+
+    @Override
+    public boolean isVoltageFocused() {
+        return false;
+    }
+
+    @Override
+    public boolean isCurrentFocused() {
+        return false;
+    }
+
+    @Override
+    public boolean isResistanceFocused() {
+        return false;
+    }
+
+    @Override
+    public boolean isPowerFocused() {
+        return false;
+    }
+
+    @Override
+    public boolean isVoltageEnabled() {
+        return false;
+    }
+
+    @Override
+    public boolean isCurrentEnabled() {
+        return false;
+    }
+
+    @Override
+    public boolean isResistanceEnabled() {
+        return false;
+    }
+
+    @Override
+    public boolean isPowerEnabled() {
+        return false;
+    }
+
+    @Override
+    public void appendToVoltageEditText(String c) {
+
+    }
+
+    @Override
+    public void appendToCurrentEditText(String c) {
+
+    }
+
+    @Override
+    public void appendToResistanceEditText(String c) {
+
+    }
+
+    @Override
+    public void appendToPowerEditText(String c) {
+
+    }
+
+    @Override
+    public String get0() {
+        return null;
+    }
+
+    @Override
+    public String get1() {
+        return null;
+    }
+
+    @Override
+    public String get2() {
+        return null;
+    }
+
+    @Override
+    public String get3() {
+        return null;
+    }
+
+    @Override
+    public String get4() {
+        return null;
+    }
+
+    @Override
+    public String get5() {
+        return null;
+    }
+
+    @Override
+    public String get6() {
+        return null;
+    }
+
+    @Override
+    public String get7() {
+        return null;
+    }
+
+    @Override
+    public String get8() {
+        return null;
+    }
+
+    @Override
+    public String get9() {
+        return null;
+    }
+
+    @Override
+    public String getNanoPrefix() {
+        return null;
+    }
+
+    @Override
+    public String getMicroPrefix() {
+        return null;
+    }
+
+    @Override
+    public String getMilliPrefix() {
+        return null;
+    }
+
+    @Override
+    public String getKiloPrefix() {
+        return null;
+    }
+
+    @Override
+    public String getMegaPrefix() {
+        return null;
+    }
+
+    @Override
+    public String getGigaPrefix() {
+        return null;
     }
 }

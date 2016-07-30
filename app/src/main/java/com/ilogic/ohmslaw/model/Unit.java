@@ -3,6 +3,9 @@ package com.ilogic.ohmslaw.model;
 import java.io.Serializable;
 import java.text.DecimalFormat;
 
+/**
+ * @deprecated
+ */
 public class Unit implements Serializable {
 
 	private static final long serialVersionUID = 1L;

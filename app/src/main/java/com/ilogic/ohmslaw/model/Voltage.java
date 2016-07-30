@@ -5,6 +5,10 @@ package com.ilogic.ohmslaw.model;
  */
 public class Voltage extends UnitNew {
 
+    public Voltage() {
+        super();
+    }
+
     public Voltage(double quantity, Prefix prefix) {
         super(quantity, prefix);
     }

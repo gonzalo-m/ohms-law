@@ -1,5 +1,8 @@
 package com.ilogic.ohmslaw.model;
 
+/**
+ * @deprecated
+ */
 public enum Type {
 	
 	VOLT(2), AMP(3), OHM(5), WATT(7);
