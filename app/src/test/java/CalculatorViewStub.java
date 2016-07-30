@@ -240,6 +240,11 @@ public class CalculatorViewStub implements CalculatorView {
     }
 
     @Override
+    public String getDecimalPoint() {
+        return null;
+    }
+
+    @Override
     public String getNanoPrefix() {
         return null;
     }
@@ -266,6 +271,26 @@ public class CalculatorViewStub implements CalculatorView {
 
     @Override
     public String getGigaPrefix() {
+        return null;
+    }
+
+    @Override
+    public String getVolsString() {
+        return null;
+    }
+
+    @Override
+    public String getAmpsString() {
+        return null;
+    }
+
+    @Override
+    public String getOhmsString() {
+        return null;
+    }
+
+    @Override
+    public String getWattsString() {
         return null;
     }
 }
