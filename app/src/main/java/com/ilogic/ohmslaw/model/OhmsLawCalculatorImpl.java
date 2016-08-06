@@ -131,47 +131,6 @@ public class OhmsLawCalculatorImpl implements OhmsLawCalculator {
         Log.i(OhmsLawCalculatorImpl.class.getCanonicalName(), this.toString());
     }
 
-    private void setVoltageCurrentAndResistanceToZero() {
-        mVoltage.setValue(new Voltage());
-        mCurrent.setValue(new Current());
-        mResistance.setValue(new Resistance());
-    }
-
-    private void setPowerVoltageAndCurrentToZero() {
-        mPower.setValue(new Power());
-        mVoltage.setValue(new Voltage());
-        mCurrent.setValue(new Current());
-    }
-
-    private void setResistancePowerAndVoltageToZero() {
-        mResistance.setValue(new Resistance());
-        mPower.setValue(new Power());
-        mVoltage.setValue(new Voltage());
-    }
-
-    private void setCurrentResistanceAndPowerToZero() {
-        mCurrent.setValue(new Current());
-        mResistance.setValue(new Resistance());
-        mPower.setValue(new Power());
-    }
-
-    private boolean isInputVoltageOnly() {
-        return mKnownUnits[0] && !mKnownUnits[1] && !mKnownUnits[2] && !mKnownUnits[3];
-    }
-
-    private boolean isInputCurrentOnly() {
-        return !mKnownUnits[0] && mKnownUnits[1] && !mKnownUnits[2] && !mKnownUnits[3];
-    }
-
-    private boolean isInputResistanceOnly() {
-        return !mKnownUnits[0] && !mKnownUnits[1] && mKnownUnits[2] && !mKnownUnits[3];
-    }
-
-    private boolean isInputPowerOnly() {
-        return !mKnownUnits[0] && !mKnownUnits[1] && !mKnownUnits[2] && !mKnownUnits[3];
-    }
-
-
     private void computeResistanceAndPower(Voltage v, Current i) {
         mResistance.setValue(divide(v, i)); // r = v / i
         mPower.setValue(multiply(v, i));    // p = v * i
@@ -189,7 +148,6 @@ public class OhmsLawCalculatorImpl implements OhmsLawCalculator {
             mListener.onResistanceAndPowerSetToZero();
         }
     }
-
 
     private void computeCurrentAndPower(Voltage v, Resistance r) {
         mCurrent.setValue(divide(v, r));    // i = v / r;

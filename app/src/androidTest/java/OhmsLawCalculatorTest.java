@@ -60,69 +60,66 @@ public class OhmsLawCalculatorTest {
     }
 
     @Test
-    public void resistanceAndPower_EditTextViews_ShouldBeDisabled_WhenValid_VoltageAndCurrent_IsEntered() {
-        onView(withId(R.id.volts_edittext)).perform(click());
-        onView(withId(R.id.five_button)).perform(click());
-        onView(withId(R.id.amps_edittext)).perform(click());
-        onView(withId(R.id.two_button)).perform(click());
-
-        onView(withId(R.id.ohms_edittext)).check(matches(not(isEnabled())));
-        onView(withId(R.id.watts_edittext)).check(matches(not(isEnabled())));
+    public void RP_EditTextViews__ShouldBeDisabledAndEnabled__WhenValid__VI__IsEnteredAndDeleted() {
+        enableDisableTestHelper(R.id.volts_edittext, R.id.amps_edittext, R.id.ohms_edittext, R.id.watts_edittext);
     }
 
     @Test
-    public void currentAndPower_EditTextViews_ShouldBeDisabled_WhenValid_VoltageAndResistance_IsEntered() {
-        onView(withId(R.id.volts_edittext)).perform(click());
-        onView(withId(R.id.five_button)).perform(click());
-        onView(withId(R.id.ohms_edittext)).perform(click());
-        onView(withId(R.id.two_button)).perform(click());
-
-        onView(withId(R.id.amps_edittext)).check(matches(not(isEnabled())));
-        onView(withId(R.id.watts_edittext)).check(matches(not(isEnabled())));
+    public void IP_EditTextViews__ShouldBeDisabledAndEnabled__WhenValid__VR__IsEnteredAndDeleted() {
+        enableDisableTestHelper(R.id.volts_edittext, R.id.ohms_edittext, R.id.amps_edittext, R.id.watts_edittext);
     }
 
     @Test
-    public void currentAndResistance_EditTextViews_ShouldBeDisabled_WhenValid_VoltageAndPower_IsEntered() {
-        onView(withId(R.id.volts_edittext)).perform(click());
-        onView(withId(R.id.five_button)).perform(click());
-        onView(withId(R.id.watts_edittext)).perform(click());
-        onView(withId(R.id.two_button)).perform(click());
-
-        onView(withId(R.id.amps_edittext)).check(matches(not(isEnabled())));
-        onView(withId(R.id.ohms_edittext)).check(matches(not(isEnabled())));
+    public void IR_EditTextViews__ShouldBeDisabledAndEnabled__WhenValid__VP__IsEnteredAndDeleted() {
+        enableDisableTestHelper(R.id.volts_edittext, R.id.watts_edittext, R.id.amps_edittext, R.id.ohms_edittext);
     }
 
     @Test
-    public void powerAndVoltage_EditTextViews_ShouldBeDisabled_WhenValid_CurrentAndResistance_IsEntered() {
-        onView(withId(R.id.amps_edittext)).perform(click());
-        onView(withId(R.id.five_button)).perform(click());
-        onView(withId(R.id.ohms_edittext)).perform(click());
-        onView(withId(R.id.two_button)).perform(click());
-
-        onView(withId(R.id.watts_edittext)).check(matches(not(isEnabled())));
-        onView(withId(R.id.volts_edittext)).check(matches(not(isEnabled())));
+    public void VP_EditTextViews__ShouldBeDisabledAndEnabled__WhenValid__IR__IsEnteredAndDeleted() {
+        enableDisableTestHelper(R.id.amps_edittext, R.id.ohms_edittext, R.id.volts_edittext, R.id.watts_edittext);
     }
 
     @Test
-    public void voltageAndResistance_EditTextViews_ShouldBeDisabled_WhenValid_CurrentAndPower_IsEntered() {
-        onView(withId(R.id.amps_edittext)).perform(click());
-        onView(withId(R.id.five_button)).perform(click());
-        onView(withId(R.id.watts_edittext)).perform(click());
-        onView(withId(R.id.two_button)).perform(click());
-
-        onView(withId(R.id.volts_edittext)).check(matches(not(isEnabled())));
-        onView(withId(R.id.ohms_edittext)).check(matches(not(isEnabled())));
+    public void VR_EditTextViews__ShouldBeDisabledAndEnabled__WhenValid__IP__IsEnteredAndDeleted() {
+        enableDisableTestHelper(R.id.amps_edittext, R.id.watts_edittext, R.id.volts_edittext, R.id.ohms_edittext);
     }
 
     @Test
-    public void voltageAndCurrent_EditTextViews_ShouldBeDisabled_WhenValid_ResistanceAndPower_IsEntered() {
-        onView(withId(R.id.ohms_edittext)).perform(click());
+    public void VI_EditTextViews__ShouldBeDisabledAndEnabled__WhenValid__RP__IsEnteredAndDeleted() {
+        enableDisableTestHelper(R.id.ohms_edittext, R.id.watts_edittext, R.id.volts_edittext, R.id.amps_edittext);
+    }
+
+
+    private void enableDisableTestHelper(int enable1, int enable2, int disable1, int disable2) {
+        // disabling
+        onView(withId(enable1)).perform(click());
         onView(withId(R.id.five_button)).perform(click());
-        onView(withId(R.id.watts_edittext)).perform(click());
+        onView(withId(enable2)).perform(click());
         onView(withId(R.id.two_button)).perform(click());
 
-        onView(withId(R.id.volts_edittext)).check(matches(not(isEnabled())));
-        onView(withId(R.id.amps_edittext)).check(matches(not(isEnabled())));
+        onView(withId(disable1)).check(matches(not(isEnabled())));
+        onView(withId(disable2)).check(matches(not(isEnabled())));
+
+        // enabling
+        onView(withId(enable2)).perform(click());
+        onView(withId(R.id.delete_button)).perform(click());
+
+        onView(withId(disable1)).check(matches(isEnabled()));
+        onView(withId(disable2)).check(matches(isEnabled()));
+
+        // disabling
+        onView(withId(enable2)).perform(click());
+        onView(withId(R.id.two_button)).perform(click());
+
+        onView(withId(disable1)).check(matches(not(isEnabled())));
+        onView(withId(disable2)).check(matches(not(isEnabled())));
+
+        // enabling
+        onView(withId(enable1)).perform(click());
+        onView(withId(R.id.delete_button)).perform(click());
+
+        onView(withId(disable1)).check(matches(isEnabled()));
+        onView(withId(disable2)).check(matches(isEnabled()));
     }
 
 
