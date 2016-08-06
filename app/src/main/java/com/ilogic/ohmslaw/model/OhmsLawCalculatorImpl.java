@@ -131,10 +131,63 @@ public class OhmsLawCalculatorImpl implements OhmsLawCalculator {
         Log.i(OhmsLawCalculatorImpl.class.getCanonicalName(), this.toString());
     }
 
+    private void setVoltageCurrentAndResistanceToZero() {
+        mVoltage.setValue(new Voltage());
+        mCurrent.setValue(new Current());
+        mResistance.setValue(new Resistance());
+    }
+
+    private void setPowerVoltageAndCurrentToZero() {
+        mPower.setValue(new Power());
+        mVoltage.setValue(new Voltage());
+        mCurrent.setValue(new Current());
+    }
+
+    private void setResistancePowerAndVoltageToZero() {
+        mResistance.setValue(new Resistance());
+        mPower.setValue(new Power());
+        mVoltage.setValue(new Voltage());
+    }
+
+    private void setCurrentResistanceAndPowerToZero() {
+        mCurrent.setValue(new Current());
+        mResistance.setValue(new Resistance());
+        mPower.setValue(new Power());
+    }
+
+    private boolean isInputVoltageOnly() {
+        return mKnownUnits[0] && !mKnownUnits[1] && !mKnownUnits[2] && !mKnownUnits[3];
+    }
+
+    private boolean isInputCurrentOnly() {
+        return !mKnownUnits[0] && mKnownUnits[1] && !mKnownUnits[2] && !mKnownUnits[3];
+    }
+
+    private boolean isInputResistanceOnly() {
+        return !mKnownUnits[0] && !mKnownUnits[1] && mKnownUnits[2] && !mKnownUnits[3];
+    }
+
+    private boolean isInputPowerOnly() {
+        return !mKnownUnits[0] && !mKnownUnits[1] && !mKnownUnits[2] && !mKnownUnits[3];
+    }
+
+
     private void computeResistanceAndPower(Voltage v, Current i) {
         mResistance.setValue(divide(v, i)); // r = v / i
         mPower.setValue(multiply(v, i));    // p = v * i
         mListener.onResistanceAndPowerComputed(mResistance, mPower);
+
+        if (!v.isGreaterThanZero()) {
+            mKnownUnits[0] = false;
+        }
+
+        if (!i.isGreaterThanZero()) {
+            mKnownUnits[1] = false;
+        }
+
+        if (!mResistance.isGreaterThanZero() && !mPower.isGreaterThanZero()) {
+            mListener.onResistanceAndPowerSetToZero();
+        }
     }
 
 
@@ -142,6 +195,18 @@ public class OhmsLawCalculatorImpl implements OhmsLawCalculator {
         mCurrent.setValue(divide(v, r));    // i = v / r;
         mPower.setValue(divide(multiply(v, v), r));     // p = v^2 / r
         mListener.onCurrentAndPowerComputed(mCurrent, mPower);
+
+        if (!v.isGreaterThanZero()) {
+            mKnownUnits[0] = false;
+        }
+
+        if (!r.isGreaterThanZero()) {
+            mKnownUnits[2] = false;
+        }
+
+        if (!mCurrent.isGreaterThanZero() && !mPower.isGreaterThanZero()) {
+            mListener.onCurrentAndPowerSetToZero();
+        }
     }
 
 
@@ -149,6 +214,18 @@ public class OhmsLawCalculatorImpl implements OhmsLawCalculator {
         mCurrent.setValue(divide(p, v));    // i = p / v
         mResistance.setValue(divide(multiply(v, v), p));    // r = v^2 / p
         mListener.onCurrentAndResistanceComputed(mCurrent, mResistance);
+
+        if (!p.isGreaterThanZero()) {
+            mKnownUnits[3] = false;
+        }
+
+        if (!v.isGreaterThanZero()) {
+            mKnownUnits[0] = false;
+        }
+
+        if (!mCurrent.isGreaterThanZero() && !mResistance.isGreaterThanZero()) {
+            mListener.onCurrentAndResistanceSetToZero();
+        }
     }
 
 
@@ -156,6 +233,18 @@ public class OhmsLawCalculatorImpl implements OhmsLawCalculator {
         mVoltage.setValue(multiply(i, r));   // v = i * r
         mPower.setValue(multiply(multiply(i, i), r));   // p = i^2 * r
         mListener.onVoltageAndPowerComputed(mVoltage, mPower);
+
+        if (!i.isGreaterThanZero()) {
+            mKnownUnits[1] = false;
+        }
+
+        if (!r.isGreaterThanZero()) {
+            mKnownUnits[2] = false;
+        }
+
+        if (!mVoltage.isGreaterThanZero() && !mPower.isGreaterThanZero()) {
+            mListener.onVoltageAndPowerSetToZero();
+        }
     }
 
 
@@ -163,6 +252,18 @@ public class OhmsLawCalculatorImpl implements OhmsLawCalculator {
         mVoltage.setValue(divide(p, i));    // v = p / i
         mResistance.setValue(divide(p, multiply(i, i)));    // r = p / i^2
         mListener.onVoltageAndResistanceComputed(mVoltage, mResistance);
+
+        if (!p.isGreaterThanZero()) {
+            mKnownUnits[3] = false;
+        }
+
+        if (!i.isGreaterThanZero()) {
+            mKnownUnits[1] = false;
+        }
+
+        if (!mVoltage.isGreaterThanZero() && !mResistance.isGreaterThanZero()) {
+            mListener.onVoltageAndResistanceSetToZero();
+        }
     }
 
 
@@ -170,6 +271,18 @@ public class OhmsLawCalculatorImpl implements OhmsLawCalculator {
         mVoltage.setValue(sqrt(multiply(p, r)));  // v = sqrt(p * r)
         mCurrent.setValue(sqrt(divide(p, r)));  // i = sqrt(p / r)
         mListener.onVoltageAndCurrentComputed(mVoltage, mCurrent);
+
+        if (!p.isGreaterThanZero()) {
+            mKnownUnits[3] = false;
+        }
+
+        if (!r.isGreaterThanZero()) {
+            mKnownUnits[2] = false;
+        }
+
+        if (!mVoltage.isGreaterThanZero() && !mCurrent.isGreaterThanZero()) {
+            mListener.onVoltageAndCurrentSetToZero();
+        }
     }
 
 //    @Override

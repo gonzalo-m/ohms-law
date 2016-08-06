@@ -51,6 +51,10 @@ public class UnitNew {
     }
 
     public boolean isGreaterThanZero() {
+        return isGreaterThanZero(quantity);
+    }
+
+    public static boolean isGreaterThanZero(double quantity) {
         return Double.compare(quantity, ZERO) > 0;
     }
 
@@ -61,7 +65,7 @@ public class UnitNew {
     }
 
     public static UnitNew divide(UnitNew lhs, UnitNew rhs) {
-        if (!rhs.isGreaterThanZero()) {
+        if (!isGreaterThanZero(rhs.quantity)) {
             return new UnitNew();
         }
         double qty = lhs.quantity / rhs.quantity;

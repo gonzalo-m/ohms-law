@@ -75,6 +75,54 @@ public class CalculatorPresenterImpl implements CalculatorPresenter, OhmsLawCalc
     }
 
     @Override
+    public void onResistanceAndPowerSetToZero() {
+        getView().setResistanceViews("", getView().getOhmsString());
+        getView().setPowerViews("", getView().getWattsString());
+        getView().setResistanceEditTextEnabled(true);
+        getView().setPowerEditTextEnabled(true);
+    }
+
+    @Override
+    public void onCurrentAndPowerSetToZero() {
+        getView().setCurrentViews("", getView().getAmpsString());
+        getView().setPowerViews("", getView().getWattsString());
+        getView().setCurrentEditTextEnabled(true);
+        getView().setPowerEditTextEnabled(true);
+    }
+
+    @Override
+    public void onCurrentAndResistanceSetToZero() {
+        getView().setCurrentViews("", getView().getAmpsString());
+        getView().setResistanceViews("", getView().getOhmsString());
+        getView().setCurrentEditTextEnabled(true);
+        getView().setResistanceEditTextEnabled(true);
+    }
+
+    @Override
+    public void onVoltageAndPowerSetToZero() {
+        getView().setVoltageViews("", getView().getVolsString());
+        getView().setPowerViews("", getView().getWattsString());
+        getView().setVoltageEditTextEnabled(true);
+        getView().setPowerEditTextEnabled(true);
+    }
+
+    @Override
+    public void onVoltageAndResistanceSetToZero() {
+        getView().setVoltageViews("", getView().getVolsString());
+        getView().setResistanceViews("", getView().getOhmsString());
+        getView().setVoltageEditTextEnabled(true);
+        getView().setResistanceEditTextEnabled(true);
+    }
+
+    @Override
+    public void onVoltageAndCurrentSetToZero() {
+        getView().setVoltageViews("", getView().getVolsString());
+        getView().setCurrentViews("", getView().getWattsString());
+        getView().setVoltageEditTextEnabled(true);
+        getView().setCurrentEditTextEnabled(true);
+    }
+
+    @Override
     public void onClear() {
         getView().setVoltageEditTextEnabled(true);
         getView().setCurrentEditTextEnabled(true);

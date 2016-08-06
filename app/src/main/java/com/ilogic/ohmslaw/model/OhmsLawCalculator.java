@@ -13,6 +13,13 @@ public interface OhmsLawCalculator {
         void onVoltageAndResistanceComputed(Voltage v, Resistance r);
         void onVoltageAndCurrentComputed(Voltage v, Current i);
 
+        void onResistanceAndPowerSetToZero();
+        void onCurrentAndPowerSetToZero();
+        void onCurrentAndResistanceSetToZero();
+        void onVoltageAndPowerSetToZero();
+        void onVoltageAndResistanceSetToZero();
+        void onVoltageAndCurrentSetToZero();
+
         void onClear();
     }
 
