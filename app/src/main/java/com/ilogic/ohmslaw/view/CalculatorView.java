@@ -39,10 +39,10 @@ public interface CalculatorView {
     void setResistanceEditTextEnabled(boolean enabled);
     void setPowerEditTextEnabled(boolean enabled);
 
-    boolean isVoltageEnabled();
-    boolean isCurrentEnabled();
-    boolean isResistanceEnabled();
-    boolean isPowerEnabled();
+    void setVoltageEditViewColor(int color);
+    void setCurrentEditViewColor(int color);
+    void setResistanceEditViewColor(int color);
+    void setPowerEditViewColor(int color);
 
     boolean isVoltageFocused();
     boolean isCurrentFocused();
@@ -70,4 +70,8 @@ public interface CalculatorView {
     String getAmpsString();
     String getOhmsString();
     String getWattsString();
+
+    int getComputedColor();
+
+    int getDefaultColor();
 }

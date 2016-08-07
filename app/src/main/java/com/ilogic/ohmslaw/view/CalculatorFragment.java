@@ -418,6 +418,26 @@ public class CalculatorFragment extends Fragment implements CalculatorView, View
     }
 
     @Override
+    public void setVoltageEditViewColor(int color) {
+        mVoltageEditText.setTextColor(color);
+    }
+
+    @Override
+    public void setCurrentEditViewColor(int color) {
+        mCurrentEditText.setTextColor(color);
+    }
+
+    @Override
+    public void setResistanceEditViewColor(int color) {
+        mResistanceEditText.setTextColor(color);
+    }
+
+    @Override
+    public void setPowerEditViewColor(int color) {
+        mPowerEditText.setTextColor(color);
+    }
+
+    @Override
     public boolean isVoltageFocused() {
         return mVoltageEditText.isFocused();
     }
@@ -437,25 +457,6 @@ public class CalculatorFragment extends Fragment implements CalculatorView, View
         return mPowerEditText.isFocused();
     }
 
-    @Override
-    public boolean isVoltageEnabled() {
-        return mVoltageEditText.isEnabled();
-    }
-
-    @Override
-    public boolean isCurrentEnabled() {
-        return mCurrentEditText.isEnabled();
-    }
-
-    @Override
-    public boolean isResistanceEnabled() {
-        return mResistanceEditText.isEnabled();
-    }
-
-    @Override
-    public boolean isPowerEnabled() {
-        return mPowerEditText.isEnabled();
-    }
 
     @Override
     public void appendToVoltageEditText(String c) {
@@ -580,5 +581,15 @@ public class CalculatorFragment extends Fragment implements CalculatorView, View
     @Override
     public String getWattsString() {
         return getString(R.string.label_watts);
+    }
+
+    @Override
+    public int getComputedColor() {
+        return getResources().getColor(R.color.blue);
+    }
+
+    @Override
+    public int getDefaultColor() {
+        return getResources().getColor(R.color.black);
     }
 }

@@ -35,6 +35,9 @@ import static org.hamcrest.Matchers.not;
 @RunWith(AndroidJUnit4.class)
 public class OhmsLawCalculatorTest {
 
+    private static final int DEFAULT_COLOR_RES = R.color.black;
+    private static final int COMPUTED_COLOR_RES = R.color.blue;
+
     @Rule
     public ActivityTestRule<NewMainActivity> mActivityRule = new ActivityTestRule<>(NewMainActivity.class);
 
@@ -91,35 +94,48 @@ public class OhmsLawCalculatorTest {
 
 
     private void enableDisableTestHelper(int enable1, int enable2, int disable1, int disable2) {
-        // disabling
+        onView(withId(enable1)).check(matches(CustomMatcher.withTextColor(DEFAULT_COLOR_RES)));
+        onView(withId(enable2)).check(matches(CustomMatcher.withTextColor(DEFAULT_COLOR_RES)));
+        onView(withId(disable1)).check(matches(CustomMatcher.withTextColor(DEFAULT_COLOR_RES)));
+        onView(withId(disable2)).check(matches(CustomMatcher.withTextColor(DEFAULT_COLOR_RES)));
+
+        // computing
         onView(withId(enable1)).perform(click());
         onView(withId(R.id.five_button)).perform(click());
         onView(withId(enable2)).perform(click());
         onView(withId(R.id.two_button)).perform(click());
 
         onView(withId(disable1)).check(matches(not(isEnabled())));
+        onView(withId(disable1)).check(matches(CustomMatcher.withTextColor(COMPUTED_COLOR_RES)));
         onView(withId(disable2)).check(matches(not(isEnabled())));
+        onView(withId(disable2)).check(matches(CustomMatcher.withTextColor(COMPUTED_COLOR_RES)));
 
-        // enabling
+        // restoring
         onView(withId(enable2)).perform(click());
         onView(withId(R.id.delete_button)).perform(click());
 
         onView(withId(disable1)).check(matches(isEnabled()));
+        onView(withId(disable1)).check(matches(CustomMatcher.withTextColor(DEFAULT_COLOR_RES)));
         onView(withId(disable2)).check(matches(isEnabled()));
+        onView(withId(disable2)).check(matches(CustomMatcher.withTextColor(DEFAULT_COLOR_RES)));
 
-        // disabling
+        // computing
         onView(withId(enable2)).perform(click());
         onView(withId(R.id.two_button)).perform(click());
 
         onView(withId(disable1)).check(matches(not(isEnabled())));
+        onView(withId(disable1)).check(matches(CustomMatcher.withTextColor(COMPUTED_COLOR_RES)));
         onView(withId(disable2)).check(matches(not(isEnabled())));
+        onView(withId(disable2)).check(matches(CustomMatcher.withTextColor(COMPUTED_COLOR_RES)));
 
-        // enabling
+        // restoring
         onView(withId(enable1)).perform(click());
         onView(withId(R.id.delete_button)).perform(click());
 
         onView(withId(disable1)).check(matches(isEnabled()));
+        onView(withId(disable1)).check(matches(CustomMatcher.withTextColor(DEFAULT_COLOR_RES)));
         onView(withId(disable2)).check(matches(isEnabled()));
+        onView(withId(disable2)).check(matches(CustomMatcher.withTextColor(DEFAULT_COLOR_RES)));
     }
 
 

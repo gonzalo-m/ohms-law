@@ -1,6 +1,5 @@
 package com.ilogic.ohmslaw.presenter;
 
-
 import com.ilogic.ohmslaw.model.Current;
 import com.ilogic.ohmslaw.model.OhmsLawCalculator;
 import com.ilogic.ohmslaw.model.OhmsLawCalculatorImpl;
@@ -19,17 +18,24 @@ public class CalculatorPresenterImpl implements CalculatorPresenter, OhmsLawCalc
     private CalculatorView mView;
     private OhmsLawCalculator mCalc;
 
+    private final int COMPUTED_COLOR;
+    private final int DEFAULT_COLOR;
+
     public static final String EMPTY_STR = "";
 
     public CalculatorPresenterImpl(CalculatorView view) {
         mView = view;
+        COMPUTED_COLOR = getView().getComputedColor();
+        DEFAULT_COLOR = getView().getDefaultColor();
         mCalc = new OhmsLawCalculatorImpl(this);
     }
 
     @Override
     public void onResistanceAndPowerComputed(Resistance r, Power p) {
         getView().setResistanceEditTextEnabled(false);
+        getView().setResistanceEditViewColor(COMPUTED_COLOR);
         getView().setPowerEditTextEnabled(false);
+        getView().setPowerEditViewColor(COMPUTED_COLOR);
         getView().setResistanceViews(str(r.getQuantity()), r.getPrefixSymbol() + getView().getOhmsString());
         getView().setPowerViews(str(p.getQuantity()), p.getPrefixSymbol() + getView().getWattsString());
     }
@@ -37,7 +43,9 @@ public class CalculatorPresenterImpl implements CalculatorPresenter, OhmsLawCalc
     @Override
     public void onCurrentAndPowerComputed(Current i, Power p) {
         getView().setCurrentEditTextEnabled(false);
+        getView().setCurrentEditViewColor(COMPUTED_COLOR);
         getView().setPowerEditTextEnabled(false);
+        getView().setPowerEditViewColor(COMPUTED_COLOR);
         getView().setCurrentViews(str(i.getQuantity()), i.getPrefixSymbol() + getView().getAmpsString());
         getView().setPowerViews(str(p.getQuantity()), p.getPrefixSymbol() + getView().getWattsString());
     }
@@ -45,7 +53,9 @@ public class CalculatorPresenterImpl implements CalculatorPresenter, OhmsLawCalc
     @Override
     public void onCurrentAndResistanceComputed(Current i, Resistance r) {
         getView().setCurrentEditTextEnabled(false);
+        getView().setCurrentEditViewColor(COMPUTED_COLOR);
         getView().setResistanceEditTextEnabled(false);
+        getView().setResistanceEditViewColor(COMPUTED_COLOR);
         getView().setCurrentViews(str(i.getQuantity()), i.getPrefixSymbol() + getView().getAmpsString());
         getView().setResistanceViews(str(r.getQuantity()), r.getPrefixSymbol() + getView().getOhmsString());
     }
@@ -53,7 +63,9 @@ public class CalculatorPresenterImpl implements CalculatorPresenter, OhmsLawCalc
     @Override
     public void onVoltageAndPowerComputed(Voltage v, Power p) {
         getView().setVoltageEditTextEnabled(false);
+        getView().setVoltageEditViewColor(COMPUTED_COLOR);
         getView().setPowerEditTextEnabled(false);
+        getView().setPowerEditViewColor(COMPUTED_COLOR);
         getView().setVoltageViews(str(v.getQuantity()), v.getPrefixSymbol() + getView().getVolsString());
         getView().setPowerViews(str(p.getQuantity()), p.getPrefixSymbol() + getView().getWattsString());
     }
@@ -61,7 +73,9 @@ public class CalculatorPresenterImpl implements CalculatorPresenter, OhmsLawCalc
     @Override
     public void onVoltageAndResistanceComputed(Voltage v, Resistance r) {
         getView().setVoltageEditTextEnabled(false);
+        getView().setVoltageEditViewColor(COMPUTED_COLOR);
         getView().setResistanceEditTextEnabled(false);
+        getView().setResistanceEditViewColor(COMPUTED_COLOR);
         getView().setVoltageViews(str(v.getQuantity()), v.getPrefixSymbol() + getView().getVolsString());
         getView().setResistanceViews(str(r.getQuantity()), r.getPrefixSymbol() + getView().getOhmsString());
     }
@@ -69,7 +83,9 @@ public class CalculatorPresenterImpl implements CalculatorPresenter, OhmsLawCalc
     @Override
     public void onVoltageAndCurrentComputed(Voltage v, Current i) {
         getView().setVoltageEditTextEnabled(false);
+        getView().setVoltageEditViewColor(COMPUTED_COLOR);
         getView().setCurrentEditTextEnabled(false);
+        getView().setCurrentEditViewColor(COMPUTED_COLOR);
         getView().setVoltageViews(str(v.getQuantity()), v.getPrefixSymbol() + getView().getVolsString());
         getView().setCurrentViews(str(i.getQuantity()), i.getPrefixSymbol() + getView().getAmpsString());
     }
@@ -79,7 +95,9 @@ public class CalculatorPresenterImpl implements CalculatorPresenter, OhmsLawCalc
         getView().setResistanceViews("", getView().getOhmsString());
         getView().setPowerViews("", getView().getWattsString());
         getView().setResistanceEditTextEnabled(true);
+        getView().setResistanceEditViewColor(DEFAULT_COLOR);
         getView().setPowerEditTextEnabled(true);
+        getView().setPowerEditViewColor(DEFAULT_COLOR);
     }
 
     @Override
@@ -87,7 +105,9 @@ public class CalculatorPresenterImpl implements CalculatorPresenter, OhmsLawCalc
         getView().setCurrentViews("", getView().getAmpsString());
         getView().setPowerViews("", getView().getWattsString());
         getView().setCurrentEditTextEnabled(true);
+        getView().setCurrentEditViewColor(DEFAULT_COLOR);
         getView().setPowerEditTextEnabled(true);
+        getView().setPowerEditViewColor(DEFAULT_COLOR);
     }
 
     @Override
@@ -95,7 +115,9 @@ public class CalculatorPresenterImpl implements CalculatorPresenter, OhmsLawCalc
         getView().setCurrentViews("", getView().getAmpsString());
         getView().setResistanceViews("", getView().getOhmsString());
         getView().setCurrentEditTextEnabled(true);
+        getView().setCurrentEditViewColor(DEFAULT_COLOR);
         getView().setResistanceEditTextEnabled(true);
+        getView().setResistanceEditViewColor(DEFAULT_COLOR);
     }
 
     @Override
@@ -103,7 +125,9 @@ public class CalculatorPresenterImpl implements CalculatorPresenter, OhmsLawCalc
         getView().setVoltageViews("", getView().getVolsString());
         getView().setPowerViews("", getView().getWattsString());
         getView().setVoltageEditTextEnabled(true);
+        getView().setVoltageEditViewColor(DEFAULT_COLOR);
         getView().setPowerEditTextEnabled(true);
+        getView().setPowerEditViewColor(DEFAULT_COLOR);
     }
 
     @Override
@@ -111,7 +135,9 @@ public class CalculatorPresenterImpl implements CalculatorPresenter, OhmsLawCalc
         getView().setVoltageViews("", getView().getVolsString());
         getView().setResistanceViews("", getView().getOhmsString());
         getView().setVoltageEditTextEnabled(true);
+        getView().setVoltageEditViewColor(DEFAULT_COLOR);
         getView().setResistanceEditTextEnabled(true);
+        getView().setResistanceEditViewColor(DEFAULT_COLOR);
     }
 
     @Override
@@ -119,15 +145,21 @@ public class CalculatorPresenterImpl implements CalculatorPresenter, OhmsLawCalc
         getView().setVoltageViews("", getView().getVolsString());
         getView().setCurrentViews("", getView().getWattsString());
         getView().setVoltageEditTextEnabled(true);
+        getView().setVoltageEditViewColor(DEFAULT_COLOR);
         getView().setCurrentEditTextEnabled(true);
+        getView().setCurrentEditViewColor(DEFAULT_COLOR);
     }
 
     @Override
     public void onClear() {
         getView().setVoltageEditTextEnabled(true);
+        getView().setVoltageEditViewColor(DEFAULT_COLOR);
         getView().setCurrentEditTextEnabled(true);
+        getView().setCurrentEditViewColor(DEFAULT_COLOR);
         getView().setResistanceEditTextEnabled(true);
+        getView().setResistanceEditViewColor(DEFAULT_COLOR);
         getView().setPowerEditTextEnabled(true);
+        getView().setPowerEditViewColor(DEFAULT_COLOR);
         getView().setVoltageViews(EMPTY_STR, getView().getVolsString());
         getView().setCurrentViews(EMPTY_STR, getView().getAmpsString());
         getView().setResistanceViews(EMPTY_STR, getView().getOhmsString());
