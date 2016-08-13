@@ -4,7 +4,9 @@ import java.util.Observable;
 
 import com.ilogic.ohmslaw.R;
 
-
+/**
+ * @deprecated
+ */
 public class OhmsLawModel extends Observable {
 	
 	private Unit voltage, current, resistance, power;

@@ -13,7 +13,7 @@ import static org.junit.Assert.assertTrue;
 /**
  * Created by G on 8/8/16.
  */
-public class ModelTest implements OhmsLawCalculator.OnCalculatorStateChangedListener {
+public class ModelBasicTest implements OhmsLawCalculator.OnCalculatorStateChangedListener {
 
     boolean didClear;
     boolean didSetResistanceAndPowerToZero;

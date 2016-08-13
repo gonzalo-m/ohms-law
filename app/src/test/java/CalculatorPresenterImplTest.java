@@ -22,18 +22,18 @@ public class CalculatorPresenterImplTest {
         mCalcView = new CalculatorViewStub();
     }
 
-    @Test
-    public void editTextViewsShouldRespondToButtonClicks() {
-        mCalcView.getPresenter().zeroButtonClicked();
-        assertEquals(mCalcView.mVoltageQty, CalculatorPresenterImpl.EMPTY_STR);
-        assertEquals(mCalcView.mVoltagePrefixSymbol, CalculatorPresenterImpl.EMPTY_STR);
-        assertEquals(mCalcView.mCurrentQty, CalculatorPresenterImpl.EMPTY_STR);
-        assertEquals(mCalcView.mCurrentPrefixSymbol, CalculatorPresenterImpl.EMPTY_STR);
-        assertEquals(mCalcView.mResistanceQty, CalculatorPresenterImpl.EMPTY_STR);
-        assertEquals(mCalcView.mResistancePrefixSymbol, CalculatorPresenterImpl.EMPTY_STR);
-        assertEquals(mCalcView.mPowerQty, CalculatorPresenterImpl.EMPTY_STR);
-        assertEquals(mCalcView.mPowerPrefixSymbol, CalculatorPresenterImpl.EMPTY_STR);
-    }
+//    @Test
+//    public void editTextViewsShouldRespondToButtonClicks() {
+//        mCalcView.getPresenter().zeroButtonClicked();
+//        assertEquals(mCalcView.mVoltageQty, CalculatorPresenterImpl.EMPTY_STR);
+//        assertEquals(mCalcView.mVoltagePrefixSymbol, CalculatorPresenterImpl.EMPTY_STR);
+//        assertEquals(mCalcView.mCurrentQty, CalculatorPresenterImpl.EMPTY_STR);
+//        assertEquals(mCalcView.mCurrentPrefixSymbol, CalculatorPresenterImpl.EMPTY_STR);
+//        assertEquals(mCalcView.mResistanceQty, CalculatorPresenterImpl.EMPTY_STR);
+//        assertEquals(mCalcView.mResistancePrefixSymbol, CalculatorPresenterImpl.EMPTY_STR);
+//        assertEquals(mCalcView.mPowerQty, CalculatorPresenterImpl.EMPTY_STR);
+//        assertEquals(mCalcView.mPowerPrefixSymbol, CalculatorPresenterImpl.EMPTY_STR);
+//    }
 
 //    @Test
 //    public void viewShouldSetAllUnitsToEmpty() {
