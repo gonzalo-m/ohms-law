@@ -123,4 +123,26 @@ public class UnitNew {
                 "," + prefix +
                 '}';
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        UnitNew unitNew = (UnitNew) o;
+
+        if (Double.compare(unitNew.quantity, quantity) != 0) return false;
+        return prefix == unitNew.prefix;
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result;
+        long temp;
+        temp = Double.doubleToLongBits(quantity);
+        result = (int) (temp ^ (temp >>> 32));
+        result = 31 * result + prefix.hashCode();
+        return result;
+    }
 }

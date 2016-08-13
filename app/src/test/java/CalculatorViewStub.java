@@ -130,6 +130,26 @@ public class CalculatorViewStub implements CalculatorView {
     }
 
     @Override
+    public void setVoltageEditViewColor(int color) {
+
+    }
+
+    @Override
+    public void setCurrentEditViewColor(int color) {
+
+    }
+
+    @Override
+    public void setResistanceEditViewColor(int color) {
+
+    }
+
+    @Override
+    public void setPowerEditViewColor(int color) {
+
+    }
+
+    @Override
     public boolean isVoltageFocused() {
         return false;
     }
@@ -146,26 +166,6 @@ public class CalculatorViewStub implements CalculatorView {
 
     @Override
     public boolean isPowerFocused() {
-        return false;
-    }
-
-    @Override
-    public boolean isVoltageEnabled() {
-        return false;
-    }
-
-    @Override
-    public boolean isCurrentEnabled() {
-        return false;
-    }
-
-    @Override
-    public boolean isResistanceEnabled() {
-        return false;
-    }
-
-    @Override
-    public boolean isPowerEnabled() {
         return false;
     }
 
@@ -292,5 +292,15 @@ public class CalculatorViewStub implements CalculatorView {
     @Override
     public String getWattsString() {
         return null;
+    }
+
+    @Override
+    public int getComputedColor() {
+        return 0;
+    }
+
+    @Override
+    public int getDefaultColor() {
+        return 0;
     }
 }

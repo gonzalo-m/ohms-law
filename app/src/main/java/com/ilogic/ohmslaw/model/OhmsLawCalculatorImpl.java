@@ -1,7 +1,5 @@
 package com.ilogic.ohmslaw.model;
 
-import android.util.Log;
-
 import java.util.Arrays;
 
 import static com.ilogic.ohmslaw.model.UnitNew.divide;
@@ -127,8 +125,6 @@ public class OhmsLawCalculatorImpl implements OhmsLawCalculator {
         } else if (isInputResistanceAndPower()) {
             computeVoltageAndCurrent(mPower, mResistance);
         }
-
-        Log.i(OhmsLawCalculatorImpl.class.getCanonicalName(), this.toString());
     }
 
     private void computeResistanceAndPower(Voltage v, Current i) {
