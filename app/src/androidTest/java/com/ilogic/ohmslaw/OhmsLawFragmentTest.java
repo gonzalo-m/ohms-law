@@ -40,6 +40,7 @@ public class OhmsLawFragmentTest {
 
     private static final int DEFAULT_COLOR_RES = R.color.black;
     private static final int COMPUTED_COLOR_RES = R.color.blue;
+
     private static final int PREFIX_BUTTON_IDS[] = { R.id.nano_prefix_button, R.id.micro_prefix_button,
         R.id.milli_prefix_button, R.id.kilo_prefix_button, R.id.mega_prefix_button, R.id.giga_prefix_button };
     private static final Prefix PREFIXES[] = { Prefix.NANO, Prefix.MICRO, Prefix.MILLI, Prefix.KILO, Prefix.MEGA, Prefix.GIGA };
@@ -157,7 +158,7 @@ public class OhmsLawFragmentTest {
     }
 
     @Test
-    public void prefixButtons__ShouldUpdate__ResistamceLabel() {
+    public void prefixButtons__ShouldUpdate__ResistanceLabel() {
         String unit = mActivityRule.getActivity().getString(R.string.label_ohms);
         prefixButtonsTestHelper(unit, R.id.ohms_edittext, R.id.ohms_textview);
     }

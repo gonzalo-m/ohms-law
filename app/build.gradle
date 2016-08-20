@@ -34,7 +34,7 @@ android {
         androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2.2'
         androidTestCompile 'com.android.support.test:runner:0.5'
 
-        // Set this dependency if you want to use Hamcrest matching
+        // Set this dependency to use Hamcrest matching
         testCompile 'org.hamcrest:hamcrest-library:1.3'
     }
 
