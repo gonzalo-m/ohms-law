@@ -1,3 +1,5 @@
+package com.ilogic.ohmslaw;
+
 import com.ilogic.ohmslaw.presenter.CalculatorPresenter;
 import com.ilogic.ohmslaw.presenter.CalculatorPresenterImpl;
 import com.ilogic.ohmslaw.view.CalculatorView;

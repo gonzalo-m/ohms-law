@@ -3,18 +3,18 @@
     android:id="@+id/linear_layout_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:orientation="horizontal"
     android:background="@drawable/background_white"
     tools:context=".view.NewMainActivity" >
 
     <include layout="@layout/display_layout"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
         android:layout_weight="5"/>
 
     <include layout="@layout/keypad_layout"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
         android:layout_weight="4"/>
 
 </LinearLayout>

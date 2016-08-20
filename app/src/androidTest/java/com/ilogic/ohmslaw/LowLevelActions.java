@@ -1,3 +1,5 @@
+package com.ilogic.ohmslaw;
+
 import android.support.test.espresso.UiController;
 import android.support.test.espresso.ViewAction;
 import android.support.test.espresso.action.GeneralLocation;

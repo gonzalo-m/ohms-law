@@ -1,3 +1,5 @@
+package com.ilogic.ohmslaw;
+
 import android.support.test.espresso.matcher.BoundedMatcher;
 import android.view.View;
 import android.widget.TextView;

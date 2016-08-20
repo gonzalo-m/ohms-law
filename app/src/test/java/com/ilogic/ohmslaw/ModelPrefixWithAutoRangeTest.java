@@ -1,3 +1,5 @@
+package com.ilogic.ohmslaw;
+
 import com.ilogic.ohmslaw.model.Current;
 import com.ilogic.ohmslaw.model.OhmsLawCalculator;
 import com.ilogic.ohmslaw.model.OhmsLawCalculatorImpl;
@@ -13,7 +15,7 @@ import static org.junit.Assert.assertTrue;
 /**
  * Created by G on 8/13/16.
  */
-public class ModelPrefixTest implements OhmsLawCalculator.OnCalculatorStateChangedListener {
+public class ModelPrefixWithAutoRangeTest implements OhmsLawCalculator.OnCalculatorStateChangedListener {
 
     Voltage mV;
     Current mI;

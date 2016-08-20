@@ -1,3 +1,5 @@
+package com.ilogic.ohmslaw;
+
 import com.ilogic.ohmslaw.model.Current;
 import com.ilogic.ohmslaw.model.OhmsLawCalculator;
 import com.ilogic.ohmslaw.model.OhmsLawCalculatorImpl;
