@@ -25,6 +25,7 @@ public class ModelPrefixEdgeCasesTest implements OhmsLawCalculator.OnCalculatorS
     @Test
     public void shouldComputeResistanceAndPowerForEdgeCases() {
         OhmsLawCalculator ol = new OhmsLawCalculatorImpl(this);
+        ol.setAutoRange(false);
         ol.setVoltageQuantity(12);
         ol.setVoltagePrefix(Prefix.NANO);
         ol.setCurrentQuantity(3);
@@ -50,6 +51,7 @@ public class ModelPrefixEdgeCasesTest implements OhmsLawCalculator.OnCalculatorS
     @Test
     public void shouldComputeCurrentAndPowerForEdgeCases() {
         OhmsLawCalculator ol = new OhmsLawCalculatorImpl(this);
+        ol.setAutoRange(false);
         ol.setVoltageQuantity(24);
         ol.setVoltagePrefix(Prefix.NONE);
         ol.setResistanceQuantity(20);
@@ -67,6 +69,7 @@ public class ModelPrefixEdgeCasesTest implements OhmsLawCalculator.OnCalculatorS
     @Test
     public void shouldComputeCurrentAndResistanceForEdgeCases() {
         OhmsLawCalculator ol = new OhmsLawCalculatorImpl(this);
+        ol.setAutoRange(false);
         ol.setVoltageQuantity(90);
         ol.setVoltagePrefix(Prefix.MILLI);
         ol.setPowerQuantity(27);
@@ -84,6 +87,7 @@ public class ModelPrefixEdgeCasesTest implements OhmsLawCalculator.OnCalculatorS
     @Test
     public void shouldComputeVoltageAndPowerForEdgeCases() {
         OhmsLawCalculator ol = new OhmsLawCalculatorImpl(this);
+        ol.setAutoRange(false);
         ol.setCurrentQuantity(30);
         ol.setCurrentPrefix(Prefix.MILLI);
         ol.setResistanceQuantity(166.66666666666667);
@@ -101,6 +105,7 @@ public class ModelPrefixEdgeCasesTest implements OhmsLawCalculator.OnCalculatorS
     @Test
     public void shouldComputeVoltageAndResistanceForEdgeCases() {
         OhmsLawCalculator ol = new OhmsLawCalculatorImpl(this);
+        ol.setAutoRange(false);
         ol.setCurrentQuantity(30);
         ol.setCurrentPrefix(Prefix.MILLI);
         ol.setPowerQuantity(150);
@@ -118,6 +123,7 @@ public class ModelPrefixEdgeCasesTest implements OhmsLawCalculator.OnCalculatorS
     @Test
     public void shouldComputeVoltageAndCurrentForEdgeCases() {
         OhmsLawCalculator ol = new OhmsLawCalculatorImpl(this);
+        ol.setAutoRange(false);
         ol.setResistanceQuantity(1.6666666666666667);
         ol.setResistancePrefix(Prefix.NONE);
         ol.setPowerQuantity(1.5);

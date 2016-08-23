@@ -42,6 +42,7 @@ public class ModelPrefixTest implements OhmsLawCalculator.OnCalculatorStateChang
     @Test
     public void shouldComputeCurrentAndPower() {
         OhmsLawCalculator ol = new OhmsLawCalculatorImpl(this);
+        ol.setAutoRange(false);
         ol.setVoltageQuantity(24);
         ol.setVoltagePrefix(Prefix.NONE);
         ol.setResistanceQuantity(20);
@@ -59,6 +60,7 @@ public class ModelPrefixTest implements OhmsLawCalculator.OnCalculatorStateChang
     @Test
     public void shouldComputeCurrentAndResistance() {
         OhmsLawCalculator ol = new OhmsLawCalculatorImpl(this);
+        ol.setAutoRange(false);
         ol.setVoltageQuantity(90);
         ol.setVoltagePrefix(Prefix.MILLI);
         ol.setPowerQuantity(27);
@@ -76,6 +78,7 @@ public class ModelPrefixTest implements OhmsLawCalculator.OnCalculatorStateChang
     @Test
     public void shouldComputeVoltageAndPower() {
         OhmsLawCalculator ol = new OhmsLawCalculatorImpl(this);
+        ol.setAutoRange(false);
         ol.setCurrentQuantity(30);
         ol.setCurrentPrefix(Prefix.MILLI);
         ol.setResistanceQuantity(166.66666666666667);
@@ -93,6 +96,7 @@ public class ModelPrefixTest implements OhmsLawCalculator.OnCalculatorStateChang
     @Test
     public void shouldComputeVoltageAndResistance() {
         OhmsLawCalculator ol = new OhmsLawCalculatorImpl(this);
+        ol.setAutoRange(false);
         ol.setCurrentQuantity(30);
         ol.setCurrentPrefix(Prefix.MILLI);
         ol.setPowerQuantity(150);
@@ -110,6 +114,7 @@ public class ModelPrefixTest implements OhmsLawCalculator.OnCalculatorStateChang
     @Test
     public void shouldComputeVoltageAndCurrent() {
         OhmsLawCalculator ol = new OhmsLawCalculatorImpl(this);
+        ol.setAutoRange(false);
         ol.setResistanceQuantity(1.6666666666666667);
         ol.setResistancePrefix(Prefix.NONE);
         ol.setPowerQuantity(1.5);

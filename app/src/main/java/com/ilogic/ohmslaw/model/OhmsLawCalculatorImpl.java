@@ -85,6 +85,16 @@ public class OhmsLawCalculatorImpl implements OhmsLawCalculator {
         mListener.onClear();
     }
 
+    @Override
+    public void setAutoRange(boolean turnOn) {
+        Settings.setAutoRange(turnOn);
+    }
+
+    @Override
+    public void setNumDecimalPlaces(int numDecimals) {
+        Settings.setDecimalPlaces(numDecimals);
+    }
+
     private boolean isInputVoltageAndCurrent() {
         return mKnownUnits[0] && mKnownUnits[1];
     }

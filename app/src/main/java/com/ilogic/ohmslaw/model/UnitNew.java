@@ -7,9 +7,8 @@ public class UnitNew {
 
     public static final double ZERO = 0.0d;
 
-    private static boolean sAutoRange;
-
     private double quantity;
+    private String formattedQty;
     private Prefix prefix;
 
     public UnitNew() {
@@ -17,25 +16,30 @@ public class UnitNew {
     }
 
     public UnitNew(double quantity, Prefix prefix) {
-        this.quantity = quantity;
-        this.prefix = prefix;
+        this.setQuantity(quantity);
+        this.setPrefix(prefix);
+    }
+
+    public static String format(double qty) {
+        return Settings.getDecimalPlaces().format(qty);
     }
 
     public void setValue(UnitNew unit) {
-        this.quantity = unit.quantity;
-        this.prefix = unit.prefix;
-    }
-
-    public static void setAutoRange(boolean enabled) {
-        sAutoRange = enabled;
+        this.setQuantity(unit.quantity);
+        this.setPrefix(unit.prefix);
     }
 
     public double getQuantity() {
         return quantity;
     }
 
+    public String getFormattedQty() {
+        return formattedQty;
+    }
+
     public void setQuantity(double quantity) {
         this.quantity = quantity;
+        this.formattedQty = format(quantity);
     }
 
     public String getPrefixSymbol() {
@@ -96,7 +100,7 @@ public class UnitNew {
             currQuantity *= 1000;
         }
 
-        if (sAutoRange) {
+        if (Settings.isAutoRangeOn()) {
             // keep value between 1 - 999
             while (currQuantity < 1 && currMagnitude > Prefix.NANO.getMagnitude()) {
                 // convert down
@@ -121,6 +125,7 @@ public class UnitNew {
     public String toString() {
         return "{" + quantity +
                 "," + prefix +
+                "," + formattedQty +
                 '}';
     }
 
@@ -131,7 +136,7 @@ public class UnitNew {
 
         UnitNew unitNew = (UnitNew) o;
 
-        if (Double.compare(unitNew.quantity, quantity) != 0) return false;
+        if (formattedQty.compareTo(unitNew.formattedQty) != 0) return false;
         return prefix == unitNew.prefix;
 
     }

@@ -34,4 +34,7 @@ public interface OhmsLawCalculator {
     void setPowerPrefix(Prefix pfx);
 
     void clear();
+
+    void setAutoRange(boolean turnOn);
+    void setNumDecimalPlaces(int numDecimals);
 }
