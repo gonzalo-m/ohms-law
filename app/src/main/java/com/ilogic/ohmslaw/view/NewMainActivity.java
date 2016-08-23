@@ -1,5 +1,6 @@
 package com.ilogic.ohmslaw.view;
 
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
@@ -59,7 +60,6 @@ public class NewMainActivity extends AppCompatActivity
                     .commit();
         }
     }
-
 
     @Override
     public void onBackPressed() {

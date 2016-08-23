@@ -1,5 +1,6 @@
 package com.ilogic.ohmslaw.view;
 
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.SystemClock;
@@ -59,15 +60,22 @@ public class CalculatorFragment extends Fragment implements CalculatorView, View
         mResistanceUnitText = (TextView) view.findViewById(R.id.ohms_textview);
         mPowerUnitText = (TextView) view.findViewById(R.id.watts_textview);
 
-        int[] buttonIds = {
+        int[] nonPrefixButtonIds = {
                 R.id.one_button, R.id.two_button, R.id.three_button, R.id.four_button, R.id.five_button,
                 R.id.six_button, R.id.seven_button, R.id.eight_button, R.id.nine_button, R.id.zero_button,
-                R.id.decimal_point_button, R.id.reset_button,R.id.delete_button,
+                R.id.decimal_point_button, R.id.reset_button,R.id.delete_button
+        };
+
+        int[] prefixButtonIds = {
                 R.id.nano_prefix_button, R.id.micro_prefix_button, R.id.milli_prefix_button,
                 R.id.kilo_prefix_button, R.id.mega_prefix_button, R.id.giga_prefix_button
         };
 
-        for (int id : buttonIds) {
+        for (int id : nonPrefixButtonIds) {
+            view.findViewById(id).setOnClickListener(this);
+        }
+
+        for (int id : prefixButtonIds) {
             view.findViewById(id).setOnClickListener(this);
         }
 
@@ -114,7 +122,31 @@ public class CalculatorFragment extends Fragment implements CalculatorView, View
             }
         });
 
+        setPrefixButtonHeights(view, prefixButtonIds);
+
         return view;
+    }
+
+    /**
+     * Adjusts the heights of the prefix buttons to match the numeric buttons
+     * @param prefixBtnIds the ids of the prefix buttons that need height adjustment
+     */
+    private void setPrefixButtonHeights(View containerView, int[] prefixBtnIds) {
+        int heightRatio;
+        float displayHeight = getResources().getDisplayMetrics().heightPixels; //height is device's width in landscape mode
+
+        if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
+            final float DEVICE_HEIGHT_TO_BTN_HEIGHT_RATIO = 12.3f;
+            heightRatio = (int)((displayHeight / DEVICE_HEIGHT_TO_BTN_HEIGHT_RATIO) + 0.5f);
+
+        } else {
+            final float DEVICE_WIDTH_TO_BTN_HEIGHT_RATIO = 5.7f;
+            heightRatio = (int)((displayHeight / DEVICE_WIDTH_TO_BTN_HEIGHT_RATIO) + 0.5f);
+        }
+
+        for (int id : prefixBtnIds) {
+            ((Button)containerView.findViewById(id)).setHeight(heightRatio);
+        }
     }
 
     @Override
