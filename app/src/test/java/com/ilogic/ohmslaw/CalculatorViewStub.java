@@ -72,42 +72,42 @@ public class CalculatorViewStub implements CalculatorView {
     }
 
     @Override
-    public void setVoltagePrefixText(String pfx) {
+    public void setVoltagePrefixText(String pfx, String unitName) {
 
     }
 
     @Override
-    public void setCurrentPrefixText(String pfx) {
+    public void setCurrentPrefixText(String pfx, String unitName) {
 
     }
 
     @Override
-    public void setResistancePrefixText(String pfx) {
+    public void setResistancePrefixText(String pfx, String unitName) {
 
     }
 
     @Override
-    public void setPowerPrefixText(String pfx) {
+    public void setPowerPrefixText(String pfx, String unitName) {
 
     }
 
     @Override
-    public void setVoltageViews(String qty, String pfx) {
+    public void setVoltageViews(String qty, String pfx, String unitName) {
 
     }
 
     @Override
-    public void setCurrentViews(String qty, String pfx) {
+    public void setCurrentViews(String qty, String pfx, String unitName) {
 
     }
 
     @Override
-    public void setResistanceViews(String qty, String pfx) {
+    public void setResistanceViews(String qty, String pfx, String unitName) {
 
     }
 
     @Override
-    public void setPowerViews(String qty, String pfx) {
+    public void setPowerViews(String qty, String pfx, String unitName) {
 
     }
 
@@ -277,7 +277,7 @@ public class CalculatorViewStub implements CalculatorView {
     }
 
     @Override
-    public String getVolsString() {
+    public String getVoltsString() {
         return null;
     }
 

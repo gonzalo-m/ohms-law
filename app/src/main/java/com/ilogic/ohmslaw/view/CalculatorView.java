@@ -24,15 +24,15 @@ public interface CalculatorView {
     void setResistanceEditText(String qty);
     void setPowerEditText(String qty);
 
-    void setVoltagePrefixText(String pfx);
-    void setCurrentPrefixText(String pfx);
-    void setResistancePrefixText(String pfx);
-    void setPowerPrefixText(String pfx);
+    void setVoltagePrefixText(String pfx, String unitName);
+    void setCurrentPrefixText(String pfx, String unitName);
+    void setResistancePrefixText(String pfx, String unitName);
+    void setPowerPrefixText(String pfx, String unitName);
 
-    void setVoltageViews(String qty, String pfx);
-    void setCurrentViews(String qty, String pfx);
-    void setResistanceViews(String qty, String pfx);
-    void setPowerViews(String qty, String pfx);
+    void setVoltageViews(String qty, String pfx, String unitName);
+    void setCurrentViews(String qty, String pfx, String unitName);
+    void setResistanceViews(String qty, String pfx, String unitName);
+    void setPowerViews(String qty, String pfx, String unitName);
 
     void setVoltageEditTextEnabled(boolean enabled);
     void setCurrentEditTextEnabled(boolean enabled);
@@ -49,6 +49,8 @@ public interface CalculatorView {
     boolean isResistanceFocused();
     boolean isPowerFocused();
 
+
+    //TODO move somewhere else
     String get0();
     String get1();
     String get2();
@@ -66,7 +68,7 @@ public interface CalculatorView {
     String getKiloPrefix();
     String getMegaPrefix();
     String getGigaPrefix();
-    String getVolsString();
+    String getVoltsString();
     String getAmpsString();
     String getOhmsString();
     String getWattsString();

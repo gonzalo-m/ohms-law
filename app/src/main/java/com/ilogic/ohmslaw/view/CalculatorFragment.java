@@ -7,6 +7,8 @@ import android.os.SystemClock;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.text.Editable;
+import android.text.Html;
+import android.text.Spanned;
 import android.text.TextWatcher;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -386,47 +388,47 @@ public class CalculatorFragment extends Fragment implements CalculatorView, View
     }
 
     @Override
-    public void setVoltagePrefixText(String pfx) {
-        mVoltageUnitText.setText(pfx);
+    public void setVoltagePrefixText(String pfx, String unitName) {
+        mVoltageUnitText.setText(boldifyPrefix(pfx, unitName));
     }
 
     @Override
-    public void setCurrentPrefixText(String pfx) {
-        mCurrentUnitText.setText(pfx);
+    public void setCurrentPrefixText(String pfx, String unitName) {
+        mCurrentUnitText.setText(boldifyPrefix(pfx, unitName));
     }
 
     @Override
-    public void setResistancePrefixText(String pfx) {
-        mResistanceUnitText.setText(pfx);
+    public void setResistancePrefixText(String pfx, String unitName) {
+        mResistanceUnitText.setText(boldifyPrefix(pfx, unitName));
     }
 
     @Override
-    public void setPowerPrefixText(String pfx) {
-        mPowerUnitText.setText(pfx);
+    public void setPowerPrefixText(String pfx, String unitName) {
+        mPowerUnitText.setText(boldifyPrefix(pfx, unitName));
     }
 
     @Override
-    public void setVoltageViews(String qty, String pfx) {
+    public void setVoltageViews(String qty, String pfx, String unitName) {
         setVoltageEditText(qty);
-        setVoltagePrefixText(pfx);
+        setVoltagePrefixText(pfx, unitName);
     }
 
     @Override
-    public void setCurrentViews(String qty, String pfx) {
+    public void setCurrentViews(String qty, String pfx, String unitName) {
         setCurrentEditText(qty);
-        setCurrentPrefixText(pfx);
+        setCurrentPrefixText(pfx, unitName);
     }
 
     @Override
-    public void setResistanceViews(String qty, String pfx) {
+    public void setResistanceViews(String qty, String pfx, String unitName) {
         setResistanceEditText(qty);
-        setResistancePrefixText(pfx);
+        setResistancePrefixText(pfx, unitName);
     }
 
     @Override
-    public void setPowerViews(String qty, String pfx) {
+    public void setPowerViews(String qty, String pfx, String unitName) {
         setPowerEditText(qty);
-        setPowerPrefixText(pfx);
+        setPowerPrefixText(pfx, unitName);
     }
 
     @Override
@@ -596,7 +598,7 @@ public class CalculatorFragment extends Fragment implements CalculatorView, View
     }
 
     @Override
-    public String getVolsString() {
+    public String getVoltsString() {
         return getString(R.string.label_volts);
     }
 
@@ -623,5 +625,10 @@ public class CalculatorFragment extends Fragment implements CalculatorView, View
     @Override
     public int getDefaultColor() {
         return getResources().getColor(R.color.black);
+    }
+
+    private static Spanned boldifyPrefix(String prefix, String unitName) {
+        String source = prefix.equals("") ? unitName : "<b>" + prefix + "</b>" + unitName;
+        return Html.fromHtml(source);
     }
 }
